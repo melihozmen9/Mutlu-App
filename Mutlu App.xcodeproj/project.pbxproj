@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0A29B8827200A3D165 /* AppDelegate.swift */; };
 		215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0C29B8827200A3D165 /* SceneDelegate.swift */; };
-		215F5A0F29B8827200A3D165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0E29B8827200A3D165 /* ViewController.swift */; };
+		215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0E29B8827200A3D165 /* OpeningViewController.swift */; };
 		215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */; };
 		215F5A1729B8827400A3D165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215F5A1629B8827400A3D165 /* Assets.xcassets */; };
 		215F5A1A29B8827400A3D165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */; };
 		215F5A2529B8827400A3D165 /* Mutlu_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A2429B8827400A3D165 /* Mutlu_AppTests.swift */; };
 		215F5A2F29B8827400A3D165 /* Mutlu_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A2E29B8827400A3D165 /* Mutlu_AppUITests.swift */; };
 		215F5A3129B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A3029B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift */; };
+		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
+		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
+		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		215F5A0729B8827200A3D165 /* Mutlu App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mutlu App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F5A0A29B8827200A3D165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		215F5A0C29B8827200A3D165 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		215F5A0E29B8827200A3D165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		215F5A0E29B8827200A3D165 /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		215F5A1429B8827200A3D165 /* Mutlu_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mutlu_App.xcdatamodel; sourceTree = "<group>"; };
 		215F5A1629B8827400A3D165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		215F5A1929B8827400A3D165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,8 @@
 		215F5A2A29B8827400A3D165 /* Mutlu AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mutlu AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F5A2E29B8827400A3D165 /* Mutlu_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutlu_AppUITests.swift; sourceTree = "<group>"; };
 		215F5A3029B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutlu_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
+		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218975BD29BF34F70074DA40 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +105,8 @@
 		215F5A0929B8827200A3D165 /* Mutlu App */ = {
 			isa = PBXGroup;
 			children = (
-				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
-				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
-				215F5A0E29B8827200A3D165 /* ViewController.swift */,
-				215F5A1629B8827400A3D165 /* Assets.xcassets */,
-				215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */,
-				215F5A1B29B8827400A3D165 /* Info.plist */,
-				215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */,
+				218975AD29BF12E10074DA40 /* Core */,
+				218975AC29BF12CD0074DA40 /* View */,
 			);
 			path = "Mutlu App";
 			sourceTree = "<group>";
@@ -127,6 +128,37 @@
 			path = "Mutlu AppUITests";
 			sourceTree = "<group>";
 		};
+		218975AC29BF12CD0074DA40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				215F5A0E29B8827200A3D165 /* OpeningViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		218975AD29BF12E10074DA40 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				218975AE29BF2BFA0074DA40 /* Fonts */,
+				215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */,
+				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
+				215F5A1629B8827400A3D165 /* Assets.xcassets */,
+				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
+				215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */,
+				215F5A1B29B8827400A3D165 /* Info.plist */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		218975AE29BF2BFA0074DA40 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */,
+				21B6CFB129BFB38100E3D89F /* futur.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +175,9 @@
 			dependencies = (
 			);
 			name = "Mutlu App";
+			packageProductDependencies = (
+				218975BC29BF34F70074DA40 /* SnapKit */,
+			);
 			productName = "Mutlu App";
 			productReference = 215F5A0729B8827200A3D165 /* Mutlu App.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +250,9 @@
 				Base,
 			);
 			mainGroup = 215F59FE29B8827200A3D165;
+			packageReferences = (
+				218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 215F5A0829B8827200A3D165 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				215F5A1A29B8827400A3D165 /* LaunchScreen.storyboard in Resources */,
+				21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */,
 				215F5A1729B8827400A3D165 /* Assets.xcassets in Resources */,
+				21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215F5A0F29B8827200A3D165 /* ViewController.swift in Sources */,
+				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
@@ -596,6 +636,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		218975BC29BF34F70074DA40 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */ = {
