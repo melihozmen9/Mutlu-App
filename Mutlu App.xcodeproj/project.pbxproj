@@ -16,6 +16,9 @@
 		215F5A2529B8827400A3D165 /* Mutlu_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A2429B8827400A3D165 /* Mutlu_AppTests.swift */; };
 		215F5A2F29B8827400A3D165 /* Mutlu_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A2E29B8827400A3D165 /* Mutlu_AppUITests.swift */; };
 		215F5A3129B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A3029B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift */; };
+		2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDDB29C0522C00C47023 /* LoginViewController.swift */; };
+		2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */; };
+		2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDE029C0A9E400C47023 /* MainViewController.swift */; };
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
 		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
@@ -52,6 +55,9 @@
 		215F5A2A29B8827400A3D165 /* Mutlu AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mutlu AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F5A2E29B8827400A3D165 /* Mutlu_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutlu_AppUITests.swift; sourceTree = "<group>"; };
 		215F5A3029B8827400A3D165 /* Mutlu_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutlu_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2161BDDB29C0522C00C47023 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2161BDE029C0A9E400C47023 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
 		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				215F5A0E29B8827200A3D165 /* OpeningViewController.swift */,
+				2161BDDB29C0522C00C47023 /* LoginViewController.swift */,
+				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
+				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,9 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */,
+				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
+				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
