@@ -36,9 +36,17 @@ final class LoginViewController: UIViewController {
         return password
     }()
     
+    private let loginLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Giriş Yap"
+        label.textAlignment = .center
+        label.font = UIFont(name: "Sono-Medium.ttf", size: 20)
+        return label
+    }()
+    
     private let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Giriş Yap", for: .normal)
+        //button.setTitle("Giriş Yap", for: .normal)
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
@@ -64,6 +72,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    
        
     }
  
@@ -75,6 +84,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(password)
         view.addSubview(loginButton)
         view.addSubview(loginImageView)
+        loginButton.addSubview(loginLabel)
         
         username.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(25)
@@ -101,6 +111,13 @@ final class LoginViewController: UIViewController {
             make.left.equalTo(view).offset(10)
             make.right.equalTo(view).offset(-10)
             make.bottom.equalToSuperview()
+        }
+        
+        loginLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.top)
+            make.leading.equalTo(loginButton.snp.leading)
+            make.bottom.equalTo(loginButton.snp.bottom)
+            make.trailing.equalTo(loginButton.snp.trailing)
         }
     }
 

@@ -106,8 +106,16 @@ class OpeningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
-
+printFonts()
     }
+    func printFonts() {
+       for familyName in UIFont.familyNames {
+           print("\n-- \(familyName) \n")
+           for fontName in UIFont.fontNames(forFamilyName: familyName) {
+               print(fontName)
+           }
+       }
+   }
     // tableView.rowHeight = self.view.frame.size.height * 0.3
     private func configure() {
         design()
