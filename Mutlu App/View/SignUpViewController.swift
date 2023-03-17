@@ -60,6 +60,20 @@ class SignUpViewController: UIViewController {
         return imageView
     }()
     
+    private func createBackButton() -> UIBarButtonItem {
+        let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "EduNSWACTFoundation-Bold", size: 18)!], for: .normal)
+        return button
+    }
+    
+    lazy var backButton: UIBarButtonItem = {
+        return createBackButton()
+    }()
+    
+    @objc private func backButtonTapped() {
+     dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -69,6 +83,7 @@ class SignUpViewController: UIViewController {
     private func configure() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.gray
+        navigationItem.leftBarButtonItem = backButton
         title = "Kayıt Ol"
         view.addSubview(username)
         view.addSubview(password)

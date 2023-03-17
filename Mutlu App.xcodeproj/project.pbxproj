@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2158A91629C459200011A437 /* Edu-Bold.ttf */; };
 		215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */; };
 		215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0A29B8827200A3D165 /* AppDelegate.swift */; };
 		215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0C29B8827200A3D165 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2158A91629C459200011A437 /* Edu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edu-Bold.ttf"; sourceTree = "<group>"; };
 		215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sono-Bold.ttf"; sourceTree = "<group>"; };
 		215F5A0729B8827200A3D165 /* Mutlu App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mutlu App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F5A0A29B8827200A3D165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */,
 				215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */,
+				2158A91629C459200011A437 /* Edu-Bold.ttf */,
 				21B6CFB129BFB38100E3D89F /* futur.ttf */,
 			);
 			path = Fonts;
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */,
 				215F5A1A29B8827400A3D165 /* LaunchScreen.storyboard in Resources */,
 				215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */,
 				21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */,
@@ -491,7 +495,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3BX64U658L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mutlu App/Info.plist";
+				INFOPLIST_FILE = "/Users/kullanici/Desktop/swift/uygulamalar/Mutlu App/Mutlu App/Core/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -519,7 +523,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3BX64U658L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mutlu App/Info.plist";
+				INFOPLIST_FILE = "/Users/kullanici/Desktop/swift/uygulamalar/Mutlu App/Mutlu App/Core/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

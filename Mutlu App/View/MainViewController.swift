@@ -75,6 +75,20 @@ final class MainViewController: UIViewController {
         return label
     }()
     
+    private func createBackButton() -> UIBarButtonItem {
+        let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "EduNSWACTFoundation-Bold", size: 18)!], for: .normal)
+        return button
+    }
+    
+    lazy var backButton: UIBarButtonItem = {
+        return createBackButton()
+    }()
+    
+    @objc private func backButtonTapped() {
+     dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,6 +98,7 @@ final class MainViewController: UIViewController {
     private func configure() {
         title = "Ana Sayfa"
         navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationItem.leftBarButtonItem = backButton
         view.backgroundColor = UIColor(red: 0.99, green: 0.92, blue: 0.99, alpha: 1.00)
         view.addSubview(topLabel)
         view.addSubview(optionImageView1)

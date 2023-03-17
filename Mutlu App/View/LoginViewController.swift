@@ -40,7 +40,7 @@ final class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Giriş Yap"
         label.textAlignment = .center
-        label.font = UIFont(name: "Sono-Medium.ttf", size: 20)
+        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
         return label
     }()
     
@@ -69,17 +69,28 @@ final class LoginViewController: UIViewController {
         return imageView
     }()
     
+    private func createBackButton() -> UIBarButtonItem {
+        let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "EduNSWACTFoundation-Bold", size: 18)!], for: .normal)
+        return button
+    }
+    
+    lazy var backButton: UIBarButtonItem = {
+        return createBackButton()
+    }()
+    
+    @objc private func backButtonTapped() {
+     dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     
-       
     }
- 
+  
     private func configure() {
-        view.backgroundColor = .white
-        title = "Giriş Yap"
-        navigationController?.navigationBar.backgroundColor = UIColor.white
+        design()
         view.addSubview(username)
         view.addSubview(password)
         view.addSubview(loginButton)
@@ -119,6 +130,13 @@ final class LoginViewController: UIViewController {
             make.bottom.equalTo(loginButton.snp.bottom)
             make.trailing.equalTo(loginButton.snp.trailing)
         }
+    }
+    
+    private func design() {
+        view.backgroundColor = .white
+        title = "Giriş Yap"
+        navigationItem.leftBarButtonItem = backButton
+        navigationController?.navigationBar.backgroundColor = UIColor.white
     }
 
 }

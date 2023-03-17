@@ -40,10 +40,10 @@ class OpeningViewController: UIViewController {
     
     private let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Giriş Yap", for: .normal)
         button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: (button.titleLabel?.font.pointSize ?? 12) * 3)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 17.52)
+        button.titleLabel?.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20.52)
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = UIColor(red: 0.59, green: 0.79, blue: 0.29, alpha: 1.00)
         button.layer.cornerRadius = 27.36
@@ -62,7 +62,7 @@ class OpeningViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
         button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 27.52)
+        button.titleLabel?.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 27.52)
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = UIColor(red: 0.29, green: 0.75, blue: 0.94, alpha: 1.00)
         button.layer.cornerRadius = 27.36
@@ -106,7 +106,7 @@ class OpeningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
-printFonts()
+
     }
     func printFonts() {
        for familyName in UIFont.familyNames {
