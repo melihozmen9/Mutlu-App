@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21219BB629C78F5D008E3775 /* Bobby Rough Soft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */; };
 		21317BC629C77A3B002B78EA /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */; };
 		21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */; };
 		21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC529C77A3B002B78EA /* Kalam-Light.ttf */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bobby Rough Soft.ttf"; sourceTree = "<group>"; };
 		21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Regular.ttf"; sourceTree = "<group>"; };
 		21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		21317BC529C77A3B002B78EA /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */,
 				215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */,
 				21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */,
+				21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */,
 				21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */,
 				21317BC529C77A3B002B78EA /* Kalam-Light.ttf */,
 				21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */,
@@ -299,6 +302,7 @@
 				2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */,
 				215F5A1A29B8827400A3D165 /* LaunchScreen.storyboard in Resources */,
 				215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */,
+				21219BB629C78F5D008E3775 /* Bobby Rough Soft.ttf in Resources */,
 				21317BC629C77A3B002B78EA /* Kalam-Regular.ttf in Resources */,
 				21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */,
 				215F5A1729B8827400A3D165 /* Assets.xcassets in Resources */,

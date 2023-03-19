@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.italicSystemFont(ofSize: 22)
+            .font: UIFont(name: "Mansalva-Regular", size: 22)!
         ]
         username.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: attributes)
         username.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
         password.isSecureTextEntry = true
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.italicSystemFont(ofSize: 22)
+            .font: UIFont(name: "Mansalva-Regular", size: 22)!
         ]
         password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
         password.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
@@ -35,9 +35,16 @@ class SignUpViewController: UIViewController {
         return password
     }()
     
-    private let singUpButton: UIButton = {
+    private let signUpLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Giriş Yap"
+        label.textAlignment = .center
+        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
+        return label
+    }()
+    
+    private let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Kayıt Ol", for: .normal)
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
@@ -62,7 +69,7 @@ class SignUpViewController: UIViewController {
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
-        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "EduNSWACTFoundation-Bold", size: 18)!], for: .normal)
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
         return button
     }
     
@@ -87,34 +94,42 @@ class SignUpViewController: UIViewController {
         title = "Kayıt Ol"
         view.addSubview(username)
         view.addSubview(password)
-        view.addSubview(singUpButton)
+        view.addSubview(signUpButton)
         view.addSubview(signUpImageView)
+        signUpButton.addSubview(signUpLabel)
         
         username.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(25)
-            make.left.equalTo(view).offset(20)
-            make.right.equalTo(view).offset(-20)
-            make.height.equalTo(50)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(view.frame.size.height * 0.05)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.2)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.2)
+            make.height.equalTo(view.frame.size.height * 0.1)
         }
         
         password.snp.makeConstraints { make in
-            make.top.equalTo(username.snp.bottom).offset(25)
+            make.top.equalTo(username.snp.bottom).offset(view.frame.size.height * 0.03)
             make.left.right.equalTo(username)
             make.height.equalTo(username)
         }
         
-        singUpButton.snp.makeConstraints { make in
-            make.top.equalTo(password.snp.bottom).offset(25)
-            make.left.equalTo(view).offset(view.frame.size.width * 0.40)
-            make.width.equalTo(70)
-            make.height.equalTo(50)
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(password.snp.bottom).offset(view.frame.size.height * 0.05)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.38)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.38)
+            make.height.equalTo(view.frame.size.height * 0.07)
         }
         
         signUpImageView.snp.makeConstraints { make in
-            make.top.equalTo(singUpButton.snp.bottom).offset(25)
-            make.left.equalTo(view).offset(10)
-            make.right.equalTo(view).offset(-10)
+            make.top.equalTo(signUpButton.snp.bottom).offset(view.frame.size.height * 0.05)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.1)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.1)
             make.bottom.equalToSuperview()
+        }
+        
+        signUpLabel.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.top)
+            make.leading.equalTo(signUpButton.snp.leading)
+            make.bottom.equalTo(signUpButton.snp.bottom)
+            make.trailing.equalTo(signUpButton.snp.trailing)
         }
     }
 }
