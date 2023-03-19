@@ -8,6 +8,10 @@
 		<string>Montserrat-Bold.ttf</string>
 		<string>Sono-Bold.ttf</string>
 		<string>Edu-Bold.ttf</string>
+		<string>Mansalva-Regular.ttf</string>
+		<string>Kalam-Bold.ttf</string>
+		<string>Kalam-Regular.ttf</string>
+		<string>Kalam-Light.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
