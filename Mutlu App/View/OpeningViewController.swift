@@ -10,13 +10,13 @@ import SnapKit
 
 class OpeningViewController: UIViewController {
     
-    private let backgroundImage = UIImage(named: "mainBackground")
+    private let backgroundImage = UIImage(named: "openingBackground2")
     private var backgroundImageView = UIImageView()
     
     private let navLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.text = "Mutlu App"
-        titleLabel.font = UIFont(name: "AvenirNext-Bold", size: 28)
+        titleLabel.font = UIFont(name: "Bobby Rough Soft", size: 38)
         titleLabel.textColor = .black
         titleLabel.sizeToFit()
         return titleLabel
@@ -26,7 +26,7 @@ class OpeningViewController: UIViewController {
     private let mainLabel : UILabel = {
         let label = UILabel()
         label.text = "Canın\nSıkılırsa\nBuraya\nGel"
-        label.font = UIFont(name: "Futura-Bold", size: 72)
+        label.font = UIFont(name: "Kalam-Bold", size: 42)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
@@ -40,15 +40,24 @@ class OpeningViewController: UIViewController {
     
     private let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Giriş Yap", for: .normal)
-        button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: (button.titleLabel?.font.pointSize ?? 12) * 3)
-        button.titleLabel?.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20.52)
-        button.titleLabel?.textAlignment = .center
+        //button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         button.backgroundColor = UIColor(red: 0.59, green: 0.79, blue: 0.29, alpha: 1.00)
         button.layer.cornerRadius = 27.36
         button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         return button
+    }()
+    
+    private let loginImageView: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal))
+        return image
+    }()
+    
+    private let loginLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Giriş Yap"
+        label.textAlignment = .center
+        label.font = UIFont(name: "Kalam-Bold", size: 20)
+        return label
     }()
     
     @objc func loginTapped() {
@@ -60,14 +69,24 @@ class OpeningViewController: UIViewController {
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign Up", for: .normal)
-        button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
-        button.titleLabel?.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 27.52)
-        button.titleLabel?.textAlignment = .center
+        //button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         button.backgroundColor = UIColor(red: 0.29, green: 0.75, blue: 0.94, alpha: 1.00)
         button.layer.cornerRadius = 27.36
         button.addTarget(self, action: #selector(singUpTapped), for: .touchUpInside)
         return button
+    }()
+    
+    private let signUpImageView: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal))
+        return image
+    }()
+    
+    private let signUpLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Kayıt Ol"
+        label.textAlignment = .center
+        label.font = UIFont(name: "Kalam-Bold", size: 20)
+        return label
     }()
     
     @objc func singUpTapped() {
@@ -90,24 +109,13 @@ class OpeningViewController: UIViewController {
         label.layer.cornerRadius = 27.36
         return label
     }()
-    
-    private lazy var vstack: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [
-        mainLabel,
-        loginButton,
-        signUpButton,
-        bottomLabel
-        ])
-        view.axis = .vertical
-        view.spacing = 25
-        return view
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
 
     }
+    
     func printFonts() {
        for familyName in UIFont.familyNames {
            print("\n-- \(familyName) \n")
@@ -116,41 +124,82 @@ class OpeningViewController: UIViewController {
            }
        }
    }
-    // tableView.rowHeight = self.view.frame.size.height * 0.3
+    
     private func configure() {
         design()
-        view.addSubview(vstack)
-        vstack.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leadingMargin).offset(16)
-            make.top.equalTo(view.snp.topMargin).offset(16)
-            make.bottom.equalTo(view.snp.bottomMargin).offset(-16)
-            make.trailing.equalTo(view.snp.trailingMargin).offset(-16)
+        view.addSubview(mainLabel)
+        view.addSubview(loginButton)
+        view.addSubview(signUpButton)
+        view.addSubview(bottomLabel)
+        
+        signUpButton.addSubview(signUpLabel)
+        signUpButton.addSubview(signUpImageView)
+        loginButton.addSubview(loginLabel)
+        loginButton.addSubview(loginImageView)
+        
+        mainLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(view.frame.size.height * 0.03)
+            make.height.equalTo(view.frame.size.height * 0.40)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.1)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.1)
         }
-
+        
         loginButton.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.top.equalTo(mainLabel.snp.bottom).offset(view.frame.size.height * 0.03)
+            make.height.equalTo(view.frame.size.height * 0.10)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.26)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.26)
         }
-
+        
         signUpButton.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.top.equalTo(loginButton.snp.bottom).offset(view.frame.size.height * 0.03)
+            make.height.equalTo(view.frame.size.height * 0.10)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.26)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.26)
         }
-
+        
         bottomLabel.snp.makeConstraints { make in
-            make.height.equalTo(60)
+            make.top.equalTo(signUpButton.snp.bottom).offset(view.frame.size.height * 0.03)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.1)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.1)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-view.frame.size.height * 0.05)
         }
         
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
+        
+        loginLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.top)
+            make.leading.equalTo(loginButton.snp.leading).offset(view.frame.size.width * 0.1)
+            make.bottom.equalTo(loginButton.snp.bottom)
+        }
+        
+        loginImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(loginLabel.snp.centerY)
+            make.left.equalTo(loginLabel.snp.right)//.offset(view.frame.size.width * 0.05)
+            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.width.height.equalTo(view.frame.size.height * 0.05)
+        }
+        
+        signUpLabel.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.top)
+            make.leading.equalTo(signUpButton.snp.leading).offset(view.frame.size.width * 0.1)
+            make.bottom.equalTo(signUpButton.snp.bottom)
+        }
+        
+        signUpImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(signUpLabel.snp.centerY)
+            make.centerX.equalTo(loginImageView)//.offset(view.frame.size.width * 0.05)
+            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.width.height.equalTo(view.frame.size.height * 0.05)
+        }
     }
 
     
     private func design() {
-        
-         navigationController?.navigationBar.backgroundColor = UIColor.white
          navigationItem.leftBarButtonItem = titleItem
-
-         backgroundImageView.contentMode = .scaleToFill
+        backgroundImageView.contentMode = .scaleToFill
          backgroundImageView.alpha = 0.1
          backgroundImageView = UIImageView(image: backgroundImage)
          view.insertSubview(backgroundImageView, at: 0)

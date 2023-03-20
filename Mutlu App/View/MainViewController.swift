@@ -26,16 +26,33 @@ final class MainViewController: UIViewController {
         return imageView
     }()
     
+    func setupLabelTap() {
+          
+        let optionLabel1Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel1Tapped(_:)))
+          self.optionLabel1.isUserInteractionEnabled = true
+          self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
+          
+      }
+    
     private let optionLabel1: UILabel = {
         let label = UILabel()
-        label.text = "Sorularım var"
+        label.text = "Sorular"
         label.backgroundColor = UIColor(red: 1.00, green: 0.62, blue: 0.95, alpha: 0.5)
         label.layer.cornerRadius = 10.0
         label.layer.masksToBounds = true
         label.textAlignment = .center
         label.textColor = .white
+        //label.addGestureRecognizer(optionLabel1Tapped)
         return label
     }()
+    
+    @objc func optionLabel1Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let denemtableViewController = UINavigationController(rootViewController: QuestionsViewController())
+        denemtableViewController.modalPresentationStyle = .fullScreen
+        denemtableViewController.modalTransitionStyle = .crossDissolve
+         present(denemtableViewController, animated: true, completion: nil)
+    }
     
     private let optionImageView2: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "çizgiFilm"))
@@ -77,7 +94,7 @@ final class MainViewController: UIViewController {
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
-        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "EduNSWACTFoundation-Bold", size: 18)!], for: .normal)
+        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
         return button
     }
     
@@ -93,6 +110,11 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+        setupLabelTap()
+    }
+    
+    private func buttons(){
+        setupLabelTap()
     }
     
     private func configure() {
@@ -109,52 +131,51 @@ final class MainViewController: UIViewController {
         view.addSubview(optionLabel3)
         
         topLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(25)
-            make.left.equalTo(view).offset(20)
-            make.right.equalTo(view).offset(-20)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(view.frame.size.height * 0.04)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.30)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.30)
         }
         
         optionImageView1.snp.makeConstraints { make in
-            make.top.equalTo(topLabel.snp.bottom).offset(25)
-            make.left.equalTo(view).offset(view.frame.size.width * 0.17)
-            make.height.equalTo(170)
-            make.width.equalTo(140)
+            make.top.equalTo(topLabel.snp.bottom).offset(view.frame.size.height * 0.04)
+            make.left.equalTo(view).offset(view.frame.size.width * 0.1)
+            make.height.equalTo(view.frame.size.height * 0.20)
+            make.width.equalTo(view.frame.size.width * 0.38)
         }
         
         optionLabel1.snp.makeConstraints { make in
-            make.top.equalTo(topLabel.snp.bottom).offset(60)
-            make.height.equalTo(50)
-            make.width.equalTo(130)
-            make.leading.equalTo(optionImageView1.snp.trailing).offset(20)
-        }
-
-        optionLabel2.snp.makeConstraints { make in
-            make.top.equalTo(optionImageView1.snp.bottom).offset(75)
-            make.height.equalTo(50)
-            make.width.equalTo(100)
-            make.centerX.equalTo(optionImageView1.snp.centerX)
+            make.centerY.equalTo(optionImageView1.snp.centerY)
+            make.centerX.equalTo(optionImageView2.snp.centerX)
+            make.height.equalTo(view.frame.size.height * 0.05)
+            make.width.equalTo(view.frame.size.width * 0.3)
         }
         
         optionImageView2.snp.makeConstraints { make in
-            make.centerX.equalTo(optionLabel1.snp.centerX)
-            make.centerY.equalTo(optionLabel2.snp.centerY)
-            make.height.equalTo(170)
-            make.width.equalTo(140)
+            make.right.equalTo(view).offset(-view.frame.size.width * 0.1)
+            make.top.equalTo(optionImageView1.snp.bottom).offset(view.frame.size.height * 0.04)
+            make.height.equalTo(optionImageView1)
+            make.width.equalTo(optionImageView1)
+        }
+        
+        optionLabel2.snp.makeConstraints { make in
+            make.height.equalTo(optionLabel1)
+            make.width.equalTo(optionLabel1)
+            make.centerX.equalTo(optionImageView1)
+            make.centerY.equalTo(optionImageView2)
         }
         
         optionImageView3.snp.makeConstraints { make in
-            make.top.equalTo(optionLabel2.snp.bottom).offset(75)
-            make.centerX.equalTo(optionLabel2.snp.centerX)
-            make.height.equalTo(170)
-            make.width.equalTo(140)
+            make.top.equalTo(optionImageView2.snp.bottom).offset(view.frame.size.height * 0.04)
+            make.centerX.equalTo(optionImageView1.snp.centerX)
+            make.height.equalTo(optionImageView1)
+            make.width.equalTo(optionImageView1)
         }
         
         optionLabel3.snp.makeConstraints { make in
-            make.top.equalTo(optionImageView2.snp.bottom).offset(75)
-            make.centerX.equalTo(optionImageView2.snp.centerX)
+            make.centerX.equalTo(optionLabel1.snp.centerX)
             make.centerY.equalTo(optionImageView3.snp.centerY)
-            make.height.equalTo(50)
-            make.width.equalTo(100)
+            make.height.equalTo(optionLabel1)
+            make.width.equalTo(optionLabel1)
         }
     }
 }
