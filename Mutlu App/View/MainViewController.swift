@@ -26,6 +26,14 @@ final class MainViewController: UIViewController {
         return imageView
     }()
     
+    func setupLabelTap() {
+          
+        let optionLabel1Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel1Tapped(_:)))
+          self.optionLabel1.isUserInteractionEnabled = true
+          self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
+          
+      }
+    
     private let optionLabel1: UILabel = {
         let label = UILabel()
         label.text = "Sorular"
@@ -34,8 +42,17 @@ final class MainViewController: UIViewController {
         label.layer.masksToBounds = true
         label.textAlignment = .center
         label.textColor = .white
+        //label.addGestureRecognizer(optionLabel1Tapped)
         return label
     }()
+    
+    @objc func optionLabel1Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let denemtableViewController = UINavigationController(rootViewController: QuestionsViewController())
+        denemtableViewController.modalPresentationStyle = .fullScreen
+        denemtableViewController.modalTransitionStyle = .crossDissolve
+         present(denemtableViewController, animated: true, completion: nil)
+    }
     
     private let optionImageView2: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "çizgiFilm"))
@@ -93,6 +110,11 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+        setupLabelTap()
+    }
+    
+    private func buttons(){
+        setupLabelTap()
     }
     
     private func configure() {

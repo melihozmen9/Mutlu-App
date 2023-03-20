@@ -29,6 +29,10 @@
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
 		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
+		21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */; };
+		21FC2C3129C86B040054448A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3029C86B040054448A /* Model.swift */; };
+		21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3429C881300054448A /* QuestionTableViewCell.swift */; };
+		21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		2161BDE029C0A9E400C47023 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
 		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		21FC2C3029C86B040054448A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		21FC2C3429C881300054448A /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,7 @@
 			children = (
 				218975AD29BF12E10074DA40 /* Core */,
 				218975AC29BF12CD0074DA40 /* View */,
+				21FC2C3229C880F90054448A /* Modal */,
 			);
 			path = "Mutlu App";
 			sourceTree = "<group>";
@@ -155,6 +164,8 @@
 				2161BDDB29C0522C00C47023 /* LoginViewController.swift */,
 				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
 				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
+				21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */,
+				21FC2C3329C881040054448A /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +198,23 @@
 				21B6CFB129BFB38100E3D89F /* futur.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		21FC2C3229C880F90054448A /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				21FC2C3029C86B040054448A /* Model.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		21FC2C3329C881040054448A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				21FC2C3429C881300054448A /* QuestionTableViewCell.swift */,
+				21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +363,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */,
+				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
 				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
+				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
+				21FC2C3129C86B040054448A /* Model.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
+				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
