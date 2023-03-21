@@ -11,7 +11,7 @@ import SnapKit
 class QuestionTableViewCell: UITableViewCell {
     
     var customImageView: UIImageView = {
-        let image = UIImageView(image: UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal))
+        let image = UIImageView(image: UIImage(named: "Asset 71"))
         return image
     }()
     
@@ -19,6 +19,7 @@ class QuestionTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: "Kalam-Bold", size: 20)
         return label
     }()
     
@@ -46,7 +47,7 @@ class QuestionTableViewCell: UITableViewCell {
         }
         questionLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.equalTo(customImageView.snp.right)
+            make.left.equalTo(customImageView.snp.right).offset(contentView.frame.size.width * 0.07)
         }
         
     }

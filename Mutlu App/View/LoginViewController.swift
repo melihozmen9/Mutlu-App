@@ -10,6 +10,9 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
 
+    private let backgroundImage = UIImage(named: "openingBackground2")
+    private var backgroundImageView = UIImageView()
+    
     private let username: UITextField = {
         let username = UITextField()
         
@@ -129,13 +132,21 @@ final class LoginViewController: UIViewController {
             make.bottom.equalTo(loginButton.snp.bottom)
             make.trailing.equalTo(loginButton.snp.trailing)
         }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
+        }
     }
     
     private func design() {
-        view.backgroundColor = .white
         title = "Giriş Yap"
+        loginImageView.isHidden = true
         navigationItem.leftBarButtonItem = backButton
-        navigationController?.navigationBar.backgroundColor = UIColor.white
+//        navigationController?.navigationBar.backgroundColor = UIColor.white
+        backgroundImageView.contentMode = .scaleAspectFill
+         backgroundImageView.alpha = 0.1
+         backgroundImageView = UIImageView(image: backgroundImage)
+         view.insertSubview(backgroundImageView, at: 0)
     }
 
 }

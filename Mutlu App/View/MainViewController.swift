@@ -10,6 +10,10 @@ import SnapKit
 
 final class MainViewController: UIViewController {
     
+    private let backgroundImage = UIImage(named: "openingBackground2")
+    private var backgroundImageView = UIImageView()
+    
+    
     private let topLabel: UILabel = {
         let label = UILabel()
         label.text = "Hoşgeldin İSİM"
@@ -117,11 +121,19 @@ final class MainViewController: UIViewController {
         setupLabelTap()
     }
     
-    private func configure() {
+    private func design() {
         title = "Ana Sayfa"
-        navigationController?.navigationBar.barTintColor = UIColor.white
+//        navigationController?.navigationBar.barTintColor = UIColor.white
         navigationItem.leftBarButtonItem = backButton
-        view.backgroundColor = UIColor(red: 0.99, green: 0.92, blue: 0.99, alpha: 1.00)
+        backgroundImageView.contentMode = .scaleAspectFill
+         backgroundImageView.alpha = 0.1
+         backgroundImageView = UIImageView(image: backgroundImage)
+         view.insertSubview(backgroundImageView, at: 0)
+    }
+    
+    private func configure() {
+//        view.backgroundColor = UIColor(red: 0.99, green: 0.92, blue: 0.99, alpha: 1.00)
+        design()
         view.addSubview(topLabel)
         view.addSubview(optionImageView1)
         view.addSubview(optionLabel1)
@@ -176,6 +188,10 @@ final class MainViewController: UIViewController {
             make.centerY.equalTo(optionImageView3.snp.centerY)
             make.height.equalTo(optionLabel1)
             make.width.equalTo(optionLabel1)
+        }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
         }
     }
 }

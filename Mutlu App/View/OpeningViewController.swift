@@ -28,13 +28,13 @@ class OpeningViewController: UIViewController {
         label.text = "Canın\nSıkılırsa\nBuraya\nGel"
         label.font = UIFont(name: "Kalam-Bold", size: 42)
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
         label.backgroundColor = UIColor(red: 1.00, green: 0.80, blue: 0.80, alpha: 0.5)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 27.36
+        label.sizeToFit()
        return label
     }()
     
@@ -107,6 +107,7 @@ class OpeningViewController: UIViewController {
         label.backgroundColor = UIColor(red: 1.00, green: 0.62, blue: 0.25, alpha: 1.00)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 27.36
+        label.sizeToFit()
         return label
     }()
 

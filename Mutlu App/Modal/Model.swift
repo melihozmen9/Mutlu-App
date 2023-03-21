@@ -9,16 +9,19 @@ import UIKit
 
 class section {
     let title: String
-    let options: [String]
+    let options: [String]?
     var isOpened: Bool = false
+    let image: [UIImage]?
     
     init(
         title: String,
         options: [String],
-        isOpened: Bool = false
+        isOpened: Bool = false,
+        image: [UIImage]
     ){
         self.title = title
         self.options = options
         self.isOpened = isOpened
+        self.image = image
     }
 }
