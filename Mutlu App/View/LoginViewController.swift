@@ -10,7 +10,7 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
 
-    private let backgroundImage = UIImage(named: "openingBackground2")
+    private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
     
     private let username: UITextField = {
@@ -144,9 +144,9 @@ final class LoginViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
 //        navigationController?.navigationBar.backgroundColor = UIColor.white
         backgroundImageView.contentMode = .scaleAspectFill
-         backgroundImageView.alpha = 0.1
-         backgroundImageView = UIImageView(image: backgroundImage)
-         view.insertSubview(backgroundImageView, at: 0)
+        backgroundImageView.alpha = 0.1
+        backgroundImageView = UIImageView(image: backgroundImage)
+        view.insertSubview(backgroundImageView, at: 0)
     }
 
 }

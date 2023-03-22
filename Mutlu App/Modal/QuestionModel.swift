@@ -7,7 +7,7 @@
 
 import UIKit
 
-class section {
+class QuestionModel {
     let title: String
     let options: [String]?
     var isOpened: Bool = false

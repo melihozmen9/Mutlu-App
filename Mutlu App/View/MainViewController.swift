@@ -10,7 +10,7 @@ import SnapKit
 
 final class MainViewController: UIViewController {
     
-    private let backgroundImage = UIImage(named: "openingBackground2")
+    private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
     
     
@@ -31,12 +31,26 @@ final class MainViewController: UIViewController {
     }()
     
     func setupLabelTap() {
-          
+        
         let optionLabel1Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel1Tapped(_:)))
-          self.optionLabel1.isUserInteractionEnabled = true
-          self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
-          
-      }
+        self.optionLabel1.isUserInteractionEnabled = true
+        self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
+        self.optionImageView1.isUserInteractionEnabled = true
+        self.optionImageView1.addGestureRecognizer(optionLabel1Tap)
+        
+        let optionLabel2Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel2Tapped(_:)))
+        self.optionLabel2.isUserInteractionEnabled = true
+        self.optionLabel2.addGestureRecognizer(optionLabel2Tap)
+        self.optionImageView2.isUserInteractionEnabled = true
+        self.optionImageView2.addGestureRecognizer(optionLabel2Tap)
+        
+        let optionLabel3Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel3Tapped(_:)))
+        self.optionLabel3.isUserInteractionEnabled = true
+        self.optionLabel3.addGestureRecognizer(optionLabel3Tap)
+        self.optionImageView3.isUserInteractionEnabled = true
+        self.optionImageView3.addGestureRecognizer(optionLabel3Tap)
+        
+    }
     
     private let optionLabel1: UILabel = {
         let label = UILabel()
@@ -46,16 +60,31 @@ final class MainViewController: UIViewController {
         label.layer.masksToBounds = true
         label.textAlignment = .center
         label.textColor = .white
-        //label.addGestureRecognizer(optionLabel1Tapped)
         return label
     }()
     
     @objc func optionLabel1Tapped(_ sender: UITapGestureRecognizer) {
        // Kodunuzu buraya yazın
-        let denemtableViewController = UINavigationController(rootViewController: QuestionsViewController())
-        denemtableViewController.modalPresentationStyle = .fullScreen
-        denemtableViewController.modalTransitionStyle = .crossDissolve
-         present(denemtableViewController, animated: true, completion: nil)
+        let questionViewController = UINavigationController(rootViewController: QuestionsViewController())
+        questionViewController.modalPresentationStyle = .fullScreen
+        questionViewController.modalTransitionStyle = .crossDissolve
+         present(questionViewController, animated: true, completion: nil)
+    }
+    
+    @objc func optionLabel2Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let videoViewController = UINavigationController(rootViewController: VideoViewController())
+        videoViewController.modalPresentationStyle = .fullScreen
+        videoViewController.modalTransitionStyle = .crossDissolve
+         present(videoViewController, animated: true, completion: nil)
+    }
+    
+    @objc func optionLabel3Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let diaryViewController = UINavigationController(rootViewController: DiaryViewController())
+        diaryViewController.modalPresentationStyle = .fullScreen
+        diaryViewController.modalTransitionStyle = .crossDissolve
+         present(diaryViewController, animated: true, completion: nil)
     }
     
     private let optionImageView2: UIImageView = {

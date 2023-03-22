@@ -29,8 +29,16 @@
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
 		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
+		21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF629CAE3E40061333B /* VideoModel.swift */; };
+		21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF829CAEB4B0061333B /* VideoViewController.swift */; };
+		21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */; };
+		21B9CFFE29CB21280061333B /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */; };
+		21B9CFFF29CB21280061333B /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */; };
+		21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00029CB23DF0061333B /* DiaryViewController.swift */; };
+		21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */; };
+		21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */; };
 		21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */; };
-		21FC2C3129C86B040054448A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3029C86B040054448A /* Model.swift */; };
+		21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3029C86B040054448A /* QuestionModel.swift */; };
 		21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3429C881300054448A /* QuestionTableViewCell.swift */; };
 		21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -78,8 +86,16 @@
 		2161BDE029C0A9E400C47023 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
 		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		21B9CFF629CAE3E40061333B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		21B9CFF829CAEB4B0061333B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Regular.ttf"; sourceTree = "<group>"; };
+		21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-SemiBold.ttf"; sourceTree = "<group>"; };
+		21B9D00029CB23DF0061333B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryPageViewController.swift; sourceTree = "<group>"; };
 		21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
-		21FC2C3029C86B040054448A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		21FC2C3029C86B040054448A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		21FC2C3429C881300054448A /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +181,9 @@
 				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
 				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
 				21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */,
+				21B9CFF829CAEB4B0061333B /* VideoViewController.swift */,
+				21B9D00029CB23DF0061333B /* DiaryViewController.swift */,
+				21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */,
 				21FC2C3329C881040054448A /* Cells */,
 			);
 			path = View;
@@ -191,6 +210,8 @@
 				215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */,
 				21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */,
 				21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */,
+				21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */,
+				21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */,
 				21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */,
 				21317BC529C77A3B002B78EA /* Kalam-Light.ttf */,
 				21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */,
@@ -203,7 +224,8 @@
 		21FC2C3229C880F90054448A /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				21FC2C3029C86B040054448A /* Model.swift */,
+				21FC2C3029C86B040054448A /* QuestionModel.swift */,
+				21B9CFF629CAE3E40061333B /* VideoModel.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -213,6 +235,8 @@
 			children = (
 				21FC2C3429C881300054448A /* QuestionTableViewCell.swift */,
 				21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */,
+				21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */,
+				21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B9CFFE29CB21280061333B /* Baloo2-Regular.ttf in Resources */,
 				2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */,
 				215F5A1A29B8827400A3D165 /* LaunchScreen.storyboard in Resources */,
 				215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */,
@@ -334,6 +359,7 @@
 				21317BC629C77A3B002B78EA /* Kalam-Regular.ttf in Resources */,
 				21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */,
 				215F5A1729B8827400A3D165 /* Assets.xcassets in Resources */,
+				21B9CFFF29CB21280061333B /* Baloo2-SemiBold.ttf in Resources */,
 				21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */,
 				21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */,
 				21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */,
@@ -363,16 +389,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */,
+				21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */,
 				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
 				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
-				21FC2C3129C86B040054448A /* Model.swift in Sources */,
+				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
+				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
+				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
+				21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */,
+				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
+				21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
