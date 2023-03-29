@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G1020" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Diary" representedClassName=".Diary" syncable="YES" codeGenerationType="class">
         <attribute name="metin" optional="YES" attributeType="String"/>
-        <attribute name="tarih" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tarih" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Diary" positionX="-63" positionY="-18" width="128" height="59"/>

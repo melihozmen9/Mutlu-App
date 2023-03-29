@@ -7,10 +7,11 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 class DiaryViewController: UIViewController {
     
-    
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
@@ -53,16 +54,18 @@ class DiaryViewController: UIViewController {
         return tableView
     }()
     
-    var savedTexts: [DiaryModel] = [
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "27 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "26 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "25 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "24 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "23 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "22 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "21 Nisan, Çarşamba"),
-        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "20 Nisan, Çarşamba")
-    ]
+    var diaryArray = [Diary]()
+    
+//    var savedTexts: [DiaryModel] = [
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "27 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "26 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "25 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "24 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "23 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "22 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "21 Nisan, Çarşamba"),
+//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "20 Nisan, Çarşamba")
+//    ]
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
@@ -92,6 +95,8 @@ class DiaryViewController: UIViewController {
         tableViewSetup()
         configure()
         tableView.reloadData()
+        loadDiary()
+        print(diaryArray[0].metin)
     }
     
      override func viewDidAppear(_ animated: Bool) {
@@ -100,9 +105,13 @@ class DiaryViewController: UIViewController {
          print("DiaryPage Vİew'ı görüntülendi.")
     }
     
-    func saveTableReload(text: String, tarih: String){
-        savedTexts.append(DiaryModel(diaryText: text, date: tarih))
-        tableView.reloadData()
+    func loadDiary(){
+        let request : NSFetchRequest<Diary> = Diary.fetchRequest()
+        do {
+            diaryArray = try context!.fetch(request)
+        } catch {
+            print("error \(error)")
+        }
     }
     
     func tableViewSetup(){
@@ -113,6 +122,7 @@ class DiaryViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = UIView(frame: CGRect.zero)
         tableView.isOpaque = false
+        tableView.isEditing = true
     }
     
     func configure() {
@@ -166,12 +176,12 @@ class DiaryViewController: UIViewController {
 
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedTexts.count
+        return diaryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryTableViewCell
-        cell?.dayLabel.text = savedTexts[indexPath.row].date
+        cell?.dayLabel.text = diaryArray[indexPath.row].tarih
         cell?.dayImage.image = imageArray.shuffled()[0]
         cell?.backgroundColor = UIColor.clear
         cell?.isOpaque = false
@@ -185,11 +195,14 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         let diaryReadViewController = DiaryReadViewController()
-        diaryReadViewController.diaryLabel.text = savedTexts[indexPath.row].diaryText
+        diaryReadViewController.diaryLabel.text = diaryArray[indexPath.row].metin
 
         navigationController?.pushViewController(diaryReadViewController, animated: true)
     }
+    
+  
     
     
 }
