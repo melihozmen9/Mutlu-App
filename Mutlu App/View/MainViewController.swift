@@ -7,8 +7,13 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 final class MainViewController: UIViewController {
+    
+    private let backgroundImage = UIImage(named: "background2")
+    private var backgroundImageView = UIImageView()
+    
     
     private let topLabel: UILabel = {
         let label = UILabel()
@@ -27,12 +32,26 @@ final class MainViewController: UIViewController {
     }()
     
     func setupLabelTap() {
-          
+        
         let optionLabel1Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel1Tapped(_:)))
-          self.optionLabel1.isUserInteractionEnabled = true
-          self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
-          
-      }
+        self.optionLabel1.isUserInteractionEnabled = true
+        self.optionLabel1.addGestureRecognizer(optionLabel1Tap)
+        self.optionImageView1.isUserInteractionEnabled = true
+        self.optionImageView1.addGestureRecognizer(optionLabel1Tap)
+        
+        let optionLabel2Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel2Tapped(_:)))
+        self.optionLabel2.isUserInteractionEnabled = true
+        self.optionLabel2.addGestureRecognizer(optionLabel2Tap)
+        self.optionImageView2.isUserInteractionEnabled = true
+        self.optionImageView2.addGestureRecognizer(optionLabel2Tap)
+        
+        let optionLabel3Tap = UITapGestureRecognizer(target: self, action: #selector(optionLabel3Tapped(_:)))
+        self.optionLabel3.isUserInteractionEnabled = true
+        self.optionLabel3.addGestureRecognizer(optionLabel3Tap)
+        self.optionImageView3.isUserInteractionEnabled = true
+        self.optionImageView3.addGestureRecognizer(optionLabel3Tap)
+        
+    }
     
     private let optionLabel1: UILabel = {
         let label = UILabel()
@@ -42,16 +61,31 @@ final class MainViewController: UIViewController {
         label.layer.masksToBounds = true
         label.textAlignment = .center
         label.textColor = .white
-        //label.addGestureRecognizer(optionLabel1Tapped)
         return label
     }()
     
     @objc func optionLabel1Tapped(_ sender: UITapGestureRecognizer) {
        // Kodunuzu buraya yazın
-        let denemtableViewController = UINavigationController(rootViewController: QuestionsViewController())
-        denemtableViewController.modalPresentationStyle = .fullScreen
-        denemtableViewController.modalTransitionStyle = .crossDissolve
-         present(denemtableViewController, animated: true, completion: nil)
+        let questionViewController = UINavigationController(rootViewController: QuestionsViewController())
+        questionViewController.modalPresentationStyle = .fullScreen
+        questionViewController.modalTransitionStyle = .crossDissolve
+         present(questionViewController, animated: true, completion: nil)
+    }
+    
+    @objc func optionLabel2Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let videoViewController = UINavigationController(rootViewController: VideoViewController())
+        videoViewController.modalPresentationStyle = .fullScreen
+        videoViewController.modalTransitionStyle = .crossDissolve
+         present(videoViewController, animated: true, completion: nil)
+    }
+    
+    @objc func optionLabel3Tapped(_ sender: UITapGestureRecognizer) {
+       // Kodunuzu buraya yazın
+        let diaryViewController = UINavigationController(rootViewController: DiaryViewController())
+        diaryViewController.modalPresentationStyle = .fullScreen
+        diaryViewController.modalTransitionStyle = .crossDissolve
+         present(diaryViewController, animated: true, completion: nil)
     }
     
     private let optionImageView2: UIImageView = {
@@ -93,7 +127,7 @@ final class MainViewController: UIViewController {
     }()
     
     private func createBackButton() -> UIBarButtonItem {
-        let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
+        let button = UIBarButtonItem(title: "Çıkış Yap", style: .plain, target: self, action: #selector(backButtonTapped))
         button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
         return button
     }
@@ -103,7 +137,18 @@ final class MainViewController: UIViewController {
     }()
     
     @objc private func backButtonTapped() {
-     dismiss(animated: true, completion: nil)
+        let auth = Auth.auth()
+        
+        do {
+            try auth.signOut()
+            let defaults = UserDefaults.standard
+            defaults.set(false, forKey: "isUserSignIn")
+            dismiss(animated: true, completion: nil)
+        } catch let signOutError {
+            self.present(Service.createAlertController(title: "OK", message: signOutError.localizedDescription), animated: true, completion: nil)
+        }
+        
+     
     }
     
     override func viewDidLoad() {
@@ -111,17 +156,26 @@ final class MainViewController: UIViewController {
 
         configure()
         setupLabelTap()
+    
     }
     
     private func buttons(){
         setupLabelTap()
     }
     
-    private func configure() {
+    private func design() {
         title = "Ana Sayfa"
-        navigationController?.navigationBar.barTintColor = UIColor.white
+//        navigationController?.navigationBar.barTintColor = UIColor.white
         navigationItem.leftBarButtonItem = backButton
-        view.backgroundColor = UIColor(red: 0.99, green: 0.92, blue: 0.99, alpha: 1.00)
+        backgroundImageView.contentMode = .scaleAspectFill
+         backgroundImageView.alpha = 0.1
+         backgroundImageView = UIImageView(image: backgroundImage)
+         view.insertSubview(backgroundImageView, at: 0)
+    }
+    
+    private func configure() {
+//        view.backgroundColor = UIColor(red: 0.99, green: 0.92, blue: 0.99, alpha: 1.00)
+        design()
         view.addSubview(topLabel)
         view.addSubview(optionImageView1)
         view.addSubview(optionLabel1)
@@ -176,6 +230,10 @@ final class MainViewController: UIViewController {
             make.centerY.equalTo(optionImageView3.snp.centerY)
             make.height.equalTo(optionLabel1)
             make.width.equalTo(optionLabel1)
+        }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
         }
     }
 }

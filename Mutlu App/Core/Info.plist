@@ -13,6 +13,8 @@
 		<string>Kalam-Regular.ttf</string>
 		<string>Kalam-Light.ttf</string>
 		<string>Bobby Rough Soft.ttf</string>
+		<string>Baloo2-SemiBold.ttf</string>
+		<string>Baloo2-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

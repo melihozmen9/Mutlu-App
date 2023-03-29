@@ -1,21 +1,21 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  Mutlu App
 //
 //  Created by Kullanici on 14.03.2023.
 //
 
 import UIKit
-import SnapKit
+import Firebase
 
-final class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     private let username: UITextField = {
         let username = UITextField()
         
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.italicSystemFont(ofSize: 22)
+            .font: UIFont(name: "Mansalva-Regular", size: 22)!
         ]
         username.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: attributes)
         username.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
@@ -28,7 +28,7 @@ final class LoginViewController: UIViewController {
         password.isSecureTextEntry = true
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.italicSystemFont(ofSize: 22)
+            .font: UIFont(name: "Mansalva-Regular", size: 22)!
         ]
         password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
         password.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
@@ -36,7 +36,7 @@ final class LoginViewController: UIViewController {
         return password
     }()
     
-    private let loginLabel: UILabel = {
+    private let signUpLabel: UILabel = {
         let label = UILabel()
         label.text = "Giriş Yap"
         label.textAlignment = .center
@@ -44,27 +44,34 @@ final class LoginViewController: UIViewController {
         return label
     }()
     
-    private let loginButton: UIButton = {
+    private let signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
-        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button
     }()
-    
-    @objc func loginTapped() {
-        let mainViewController = UINavigationController(rootViewController: MainViewController())
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-         present(mainViewController, animated: true, completion: nil)
+
+    @objc func signUpTapped() {
+        let auth = Auth.auth()
+        auth.createUser(withEmail: (username.text! + "@gmail.com"), password: password.text!) { (authResult, error) in
+            if error != nil {
+                self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
+            }
+            let mainViewController = UINavigationController(rootViewController: MainViewController())
+            mainViewController.modalPresentationStyle = .fullScreen
+            mainViewController.modalTransitionStyle = .crossDissolve
+            self.present(mainViewController, animated: true, completion: nil)
+        }
+       
     }
     
-    private let loginImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "loginFront2")!)
+    private let signUpImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "signupFront")!)
         imageView.layer.cornerRadius = 10.0
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -85,16 +92,19 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-    
     }
-  
+    
+    
     private func configure() {
-        design()
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.gray
+        navigationItem.leftBarButtonItem = backButton
+        title = "Kayıt Ol"
         view.addSubview(username)
         view.addSubview(password)
-        view.addSubview(loginButton)
-        view.addSubview(loginImageView)
-        loginButton.addSubview(loginLabel)
+        view.addSubview(signUpButton)
+        view.addSubview(signUpImageView)
+        signUpButton.addSubview(signUpLabel)
         
         username.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(view.frame.size.height * 0.05)
@@ -109,33 +119,25 @@ final class LoginViewController: UIViewController {
             make.height.equalTo(username)
         }
         
-        loginButton.snp.makeConstraints { make in
+        signUpButton.snp.makeConstraints { make in
             make.top.equalTo(password.snp.bottom).offset(view.frame.size.height * 0.05)
             make.left.equalTo(view).offset(view.frame.size.width * 0.38)
             make.right.equalTo(view).offset(-view.frame.size.width * 0.38)
             make.height.equalTo(view.frame.size.height * 0.07)
         }
         
-        loginImageView.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(view.frame.size.height * 0.05)
+        signUpImageView.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.bottom).offset(view.frame.size.height * 0.05)
             make.left.equalTo(view).offset(view.frame.size.width * 0.1)
             make.right.equalTo(view).offset(-view.frame.size.width * 0.1)
             make.bottom.equalToSuperview()
         }
         
-        loginLabel.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.top)
-            make.leading.equalTo(loginButton.snp.leading)
-            make.bottom.equalTo(loginButton.snp.bottom)
-            make.trailing.equalTo(loginButton.snp.trailing)
+        signUpLabel.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.top)
+            make.leading.equalTo(signUpButton.snp.leading)
+            make.bottom.equalTo(signUpButton.snp.bottom)
+            make.trailing.equalTo(signUpButton.snp.trailing)
         }
     }
-    
-    private func design() {
-        view.backgroundColor = .white
-        title = "Giriş Yap"
-        navigationItem.leftBarButtonItem = backButton
-        navigationController?.navigationBar.backgroundColor = UIColor.white
-    }
-
 }
