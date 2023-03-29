@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 import FirebaseDatabase
+import CoreData
 
 class DiaryPageViewController: UIViewController, UITextViewDelegate {
     
-    private let database = Database.database().reference()
-    
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     let diaryViewController = DiaryViewController()
     
     private let backgroundImage = UIImage(named: "background2")
@@ -55,11 +55,17 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
             formatter.locale = locale
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
-            diaryViewController.savedTexts.append(DiaryModel(diaryText: text, date: dateString))
-//            let newDiary = DiaryModel(diaryText: text as NSObject, date: dateString)
-//            database.child("Diary").setValue(newDiary)
+         
+            
+            
+            let newDiary = Diary(context: context!)
+            newDiary.tarih = dateString
+            newDiary.metin = text
+            
+            diaryViewController.diaryArray.append(newDiary)
+            saveDiary()
             dismiss(animated: true, completion: nil)
-            print(diaryViewController.savedTexts)
+    
         }
     }
  
@@ -80,8 +86,9 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
-
+    
     func configure() {
         design()
         diaryTextView.delegate = self
@@ -137,4 +144,14 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
                textView.textColor = .lightGray
            }
        }
+}
+
+extension DiaryPageViewController {
+    func saveDiary() {
+        do {
+           try context?.save()
+        } catch  {
+            print("error: \(error)")
+        }
+    }
 }
