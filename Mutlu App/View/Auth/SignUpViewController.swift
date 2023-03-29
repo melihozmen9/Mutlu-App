@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -48,15 +49,22 @@ class SignUpViewController: UIViewController {
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
-        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button
     }()
 
-    @objc func loginTapped() {
-        let mainViewController = UINavigationController(rootViewController: MainViewController())
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-         present(mainViewController, animated: true, completion: nil)
+    @objc func signUpTapped() {
+        let auth = Auth.auth()
+        auth.createUser(withEmail: (username.text! + "@gmail.com"), password: password.text!) { (authResult, error) in
+            if error != nil {
+                self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
+            }
+            let mainViewController = UINavigationController(rootViewController: MainViewController())
+            mainViewController.modalPresentationStyle = .fullScreen
+            mainViewController.modalTransitionStyle = .crossDissolve
+            self.present(mainViewController, animated: true, completion: nil)
+        }
+       
     }
     
     private let signUpImageView: UIImageView = {

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 final class MainViewController: UIViewController {
     
@@ -126,7 +127,7 @@ final class MainViewController: UIViewController {
     }()
     
     private func createBackButton() -> UIBarButtonItem {
-        let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
+        let button = UIBarButtonItem(title: "Çıkış Yap", style: .plain, target: self, action: #selector(backButtonTapped))
         button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
         return button
     }
@@ -136,7 +137,18 @@ final class MainViewController: UIViewController {
     }()
     
     @objc private func backButtonTapped() {
-     dismiss(animated: true, completion: nil)
+        let auth = Auth.auth()
+        
+        do {
+            try auth.signOut()
+            let defaults = UserDefaults.standard
+            defaults.set(false, forKey: "isUserSignIn")
+            dismiss(animated: true, completion: nil)
+        } catch let signOutError {
+            self.present(Service.createAlertController(title: "OK", message: signOutError.localizedDescription), animated: true, completion: nil)
+        }
+        
+     
     }
     
     override func viewDidLoad() {
@@ -144,6 +156,7 @@ final class MainViewController: UIViewController {
 
         configure()
         setupLabelTap()
+    
     }
     
     private func buttons(){

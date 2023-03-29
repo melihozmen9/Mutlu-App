@@ -7,13 +7,25 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class QuestionTableViewCell: UITableViewCell {
+    
+//    var customImageView: UIImageView = {
+//        let image = UIImageView(image: UIImage())
+//        return image
+//    }()
     
     var customImageView: UIImageView = {
         let image = UIImageView(image: UIImage())
         return image
     }()
+    
+    func configureUrl(with urlString: String) {
+        if let url = URL(string: urlString) {
+            customImageView.kf.setImage(with: url)
+        }
+    }
     
     var questionLabel: UILabel = {
         let label = UILabel()

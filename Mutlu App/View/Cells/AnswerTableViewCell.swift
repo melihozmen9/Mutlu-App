@@ -46,7 +46,14 @@ class AnswerTableViewCell: UITableViewCell {
         return label
     }()
   
- 
+    func configureUrl(with urlString: String, with urlString2: String) {
+        if let url = URL(string: urlString) {
+            imageView1.kf.setImage(with: url)
+        }
+        if let url = URL(string: urlString2) {
+            imageView2.kf.setImage(with: url)
+        }
+    }
           
 
   

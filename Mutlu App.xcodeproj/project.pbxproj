@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2106D00529CDB14000C3DED3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2106D00429CDB14000C3DED3 /* FirebaseAuth */; };
+		2106D00729CDB14000C3DED3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2106D00629CDB14000C3DED3 /* FirebaseDatabase */; };
+		2106D00929CDB14000C3DED3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2106D00829CDB14000C3DED3 /* FirebaseFirestore */; };
+		2106D00B29CDB72100C3DED3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2106D00A29CDB72100C3DED3 /* GoogleService-Info.plist */; };
+		2106D00D29CDC9A800C3DED3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2106D00C29CDC9A800C3DED3 /* Service.swift */; };
 		21219BB629C78F5D008E3775 /* Bobby Rough Soft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */; };
 		21317BC629C77A3B002B78EA /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */; };
 		21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */; };
 		21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC529C77A3B002B78EA /* Kalam-Light.ttf */; };
 		21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */; };
+		2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */; };
+		2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305929CC3344008F5681 /* DiaryModel.swift */; };
+		2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305B29CC411D008F5681 /* DiaryReadViewController.swift */; };
 		2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2158A91629C459200011A437 /* Edu-Bold.ttf */; };
 		215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */; };
 		215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0A29B8827200A3D165 /* AppDelegate.swift */; };
@@ -27,6 +35,7 @@
 		2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */; };
 		2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDE029C0A9E400C47023 /* MainViewController.swift */; };
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
+		21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 21ADCF7529D438B40097E5DD /* Kingfisher */; };
 		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
 		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
 		21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF629CAE3E40061333B /* VideoModel.swift */; };
@@ -61,11 +70,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2106D00A29CDB72100C3DED3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2106D00C29CDC9A800C3DED3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bobby Rough Soft.ttf"; sourceTree = "<group>"; };
 		21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Regular.ttf"; sourceTree = "<group>"; };
 		21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		21317BC529C77A3B002B78EA /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
 		21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mansalva-Regular.ttf"; sourceTree = "<group>"; };
+		2134305929CC3344008F5681 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		2134305B29CC411D008F5681 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
 		2158A91629C459200011A437 /* Edu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edu-Bold.ttf"; sourceTree = "<group>"; };
 		215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sono-Bold.ttf"; sourceTree = "<group>"; };
 		215F5A0729B8827200A3D165 /* Mutlu App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mutlu App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +118,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */,
 				218975BD29BF34F70074DA40 /* SnapKit in Frameworks */,
+				2106D00529CDB14000C3DED3 /* FirebaseAuth in Frameworks */,
+				2106D00729CDB14000C3DED3 /* FirebaseDatabase in Frameworks */,
+				2106D00929CDB14000C3DED3 /* FirebaseFirestore in Frameworks */,
+				2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2106D00E29CDCEBD00C3DED3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2161BDDB29C0522C00C47023 /* LoginViewController.swift */,
+				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		215F59FE29B8827200A3D165 = {
 			isa = PBXGroup;
 			children = (
@@ -176,14 +203,14 @@
 		218975AC29BF12CD0074DA40 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2106D00E29CDCEBD00C3DED3 /* Auth */,
 				215F5A0E29B8827200A3D165 /* OpeningViewController.swift */,
-				2161BDDB29C0522C00C47023 /* LoginViewController.swift */,
-				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
 				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
 				21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */,
 				21B9CFF829CAEB4B0061333B /* VideoViewController.swift */,
 				21B9D00029CB23DF0061333B /* DiaryViewController.swift */,
 				21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */,
+				2134305B29CC411D008F5681 /* DiaryReadViewController.swift */,
 				21FC2C3329C881040054448A /* Cells */,
 			);
 			path = View;
@@ -196,9 +223,11 @@
 				215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */,
 				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
 				215F5A1629B8827400A3D165 /* Assets.xcassets */,
+				2106D00A29CDB72100C3DED3 /* GoogleService-Info.plist */,
 				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
 				215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */,
 				215F5A1B29B8827400A3D165 /* Info.plist */,
+				2106D00C29CDC9A800C3DED3 /* Service.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -226,6 +255,7 @@
 			children = (
 				21FC2C3029C86B040054448A /* QuestionModel.swift */,
 				21B9CFF629CAE3E40061333B /* VideoModel.swift */,
+				2134305929CC3344008F5681 /* DiaryModel.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -259,6 +289,11 @@
 			name = "Mutlu App";
 			packageProductDependencies = (
 				218975BC29BF34F70074DA40 /* SnapKit */,
+				2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */,
+				2106D00429CDB14000C3DED3 /* FirebaseAuth */,
+				2106D00629CDB14000C3DED3 /* FirebaseDatabase */,
+				2106D00829CDB14000C3DED3 /* FirebaseFirestore */,
+				21ADCF7529D438B40097E5DD /* Kingfisher */,
 			);
 			productName = "Mutlu App";
 			productReference = 215F5A0729B8827200A3D165 /* Mutlu App.app */;
@@ -334,6 +369,9 @@
 			mainGroup = 215F59FE29B8827200A3D165;
 			packageReferences = (
 				218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 215F5A0829B8827200A3D165 /* Products */;
 			projectDirPath = "";
@@ -364,6 +402,7 @@
 				21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */,
 				21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */,
 				21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */,
+				2106D00B29CDB72100C3DED3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +434,17 @@
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
 				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
+				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
 				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
 				21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */,
 				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
+				2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,
+				2106D00D29CDC9A800C3DED3 /* Service.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
 				21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */,
 			);
@@ -744,6 +786,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.3;
+			};
+		};
 		218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -752,13 +810,46 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2106D00429CDB14000C3DED3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2106D00629CDB14000C3DED3 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		2106D00829CDB14000C3DED3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		218975BC29BF34F70074DA40 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		21ADCF7529D438B40097E5DD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

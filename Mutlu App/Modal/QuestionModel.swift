@@ -11,13 +11,13 @@ class QuestionModel {
     let title: String
     let options: [String]?
     var isOpened: Bool = false
-    let image: [UIImage]?
+    let image: [String]?
     
     init(
         title: String,
         options: [String],
         isOpened: Bool = false,
-        image: [UIImage]
+        image: [String]
     ){
         self.title = title
         self.options = options

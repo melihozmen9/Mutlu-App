@@ -7,8 +7,13 @@
 
 import UIKit
 import SnapKit
+import FirebaseDatabase
 
 class DiaryPageViewController: UIViewController, UITextViewDelegate {
+    
+    private let database = Database.database().reference()
+    
+    let diaryViewController = DiaryViewController()
     
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
@@ -39,9 +44,24 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemRed
         button.titleLabel?.font = UIFont(name: "Mansalva-Regular", size: 15)
-        
+        button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    @objc func saveButtonTapped(_ sender: UIButton) {
+        if let text = diaryTextView.text, !text.isEmpty {
+            let formatter = DateFormatter()
+            let locale = Locale(identifier: "tr_TR")
+            formatter.locale = locale
+            formatter.dateFormat = "dd MMMM yyyy, EEEE"
+            let dateString = formatter.string(from: Date())
+            diaryViewController.savedTexts.append(DiaryModel(diaryText: text, date: dateString))
+//            let newDiary = DiaryModel(diaryText: text as NSObject, date: dateString)
+//            database.child("Diary").setValue(newDiary)
+            dismiss(animated: true, completion: nil)
+            print(diaryViewController.savedTexts)
+        }
+    }
  
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
@@ -116,6 +136,5 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
                textView.text = "Sevgili Günlük"
                textView.textColor = .lightGray
            }
-           textView.resignFirstResponder()
        }
 }

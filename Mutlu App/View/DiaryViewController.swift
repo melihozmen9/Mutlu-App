@@ -10,6 +10,8 @@ import SnapKit
 
 class DiaryViewController: UIViewController {
     
+    
+    
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
     
@@ -51,6 +53,17 @@ class DiaryViewController: UIViewController {
         return tableView
     }()
     
+    var savedTexts: [DiaryModel] = [
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "27 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "26 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "25 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "24 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "23 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "22 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "21 Nisan, Çarşamba"),
+        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "20 Nisan, Çarşamba")
+    ]
+    
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
         button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
@@ -78,6 +91,18 @@ class DiaryViewController: UIViewController {
         super.viewDidLoad()
         tableViewSetup()
         configure()
+        tableView.reloadData()
+    }
+    
+     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         tableView.reloadData()
+         print("DiaryPage Vİew'ı görüntülendi.")
+    }
+    
+    func saveTableReload(text: String, tarih: String){
+        savedTexts.append(DiaryModel(diaryText: text, date: tarih))
+        tableView.reloadData()
     }
     
     func tableViewSetup(){
@@ -136,19 +161,17 @@ class DiaryViewController: UIViewController {
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
-        
-        
     }
-
 }
 
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return savedTexts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryTableViewCell
+        cell?.dayLabel.text = savedTexts[indexPath.row].date
         cell?.dayImage.image = imageArray.shuffled()[0]
         cell?.backgroundColor = UIColor.clear
         cell?.isOpaque = false
@@ -162,6 +185,10 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let diaryReadViewController = DiaryReadViewController()
+        diaryReadViewController.diaryLabel.text = savedTexts[indexPath.row].diaryText
+
+        navigationController?.pushViewController(diaryReadViewController, animated: true)
     }
     
     

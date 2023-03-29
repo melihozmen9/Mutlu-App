@@ -7,8 +7,10 @@
 
 import UIKit
 import SnapKit
-
+import Firebase
 final class LoginViewController: UIViewController {
+    
+    
 
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
@@ -57,10 +59,22 @@ final class LoginViewController: UIViewController {
     }()
     
     @objc func loginTapped() {
-        let mainViewController = UINavigationController(rootViewController: MainViewController())
-        mainViewController.modalPresentationStyle = .fullScreen
-        mainViewController.modalTransitionStyle = .crossDissolve
-         present(mainViewController, animated: true, completion: nil)
+        
+        let auth = Auth.auth()
+        
+        auth.signIn(withEmail: "Mutlu@gmail.com", password: "123456") { (authResult,error) in
+            if error != nil {
+                self.present(Service.createAlertController(title: "OK", message: error!.localizedDescription), animated: true, completion: nil)
+                return
+            }
+            
+            let mainViewController = UINavigationController(rootViewController: MainViewController())
+            mainViewController.modalPresentationStyle = .fullScreen
+            mainViewController.modalTransitionStyle = .crossDissolve
+            self.present(mainViewController, animated: true, completion: nil)
+        }
+        
+     
     }
     
     private let loginImageView: UIImageView = {
