@@ -7,18 +7,31 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class QuestionTableViewCell: UITableViewCell {
     
+//    var customImageView: UIImageView = {
+//        let image = UIImageView(image: UIImage())
+//        return image
+//    }()
+    
     var customImageView: UIImageView = {
-        let image = UIImageView(image: UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal))
+        let image = UIImageView(image: UIImage())
         return image
     }()
+    
+    func configureUrl(with urlString: String) {
+        if let url = URL(string: urlString) {
+            customImageView.kf.setImage(with: url)
+        }
+    }
     
     var questionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: "Kalam-Bold", size: 20)
         return label
     }()
     
@@ -34,21 +47,28 @@ class QuestionTableViewCell: UITableViewCell {
     
     func configure() {
         
-        addSubview(questionLabel)
-        contentView.addSubview(customImageView)
+        let customView = UIView(frame: contentView.frame)
+        customView.backgroundColor = UIColor(red: 1.00, green: 0.92, blue: 0.65, alpha: 1.00)
+        customView.layer.masksToBounds = true
+        customView.layer.cornerRadius = 10
+        contentView.addSubview(customView)
+        customView.addSubview(questionLabel)
+        customView.addSubview(customImageView)
+
+        customView.snp.makeConstraints { make in
+            make.edges.equalTo(contentView.snp.edges).inset(10)
+        }
         
-        // set constraints for customImageView using SnapKit
         customImageView.snp.makeConstraints { make in
-            make.left.equalTo(contentView.snp.left)
-            make.top.equalTo(contentView.snp.top)
+            make.left.equalTo(customView.snp.left)
+            make.top.equalTo(customView.snp.top)
             make.centerY.equalTo(questionLabel.snp.centerY)
             make.width.equalTo(customImageView.snp.height)
         }
         questionLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(customImageView.snp.right)
+            make.top.bottom.equalTo(customView)
+            make.left.equalTo(customImageView.snp.right).offset(contentView.frame.size.width * 0.07)
         }
-        
     }
     
 }

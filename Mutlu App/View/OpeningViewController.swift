@@ -26,21 +26,20 @@ class OpeningViewController: UIViewController {
     private let mainLabel : UILabel = {
         let label = UILabel()
         label.text = "Canın\nSıkılırsa\nBuraya\nGel"
-        label.font = UIFont(name: "Kalam-Bold", size: 42)
+        label.font = UIFont(name: "Kalam-Bold", size: FontSize.large.size)
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
         label.backgroundColor = UIColor(red: 1.00, green: 0.80, blue: 0.80, alpha: 0.5)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 27.36
+        label.sizeToFit()
        return label
     }()
     
     private let loginButton: UIButton = {
         let button = UIButton()
-        //button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         button.backgroundColor = UIColor(red: 0.59, green: 0.79, blue: 0.29, alpha: 1.00)
         button.layer.cornerRadius = 27.36
         button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
@@ -69,7 +68,6 @@ class OpeningViewController: UIViewController {
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        //button.setImage(UIImage(systemName: "arrowtriangle.right.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         button.backgroundColor = UIColor(red: 0.29, green: 0.75, blue: 0.94, alpha: 1.00)
         button.layer.cornerRadius = 27.36
         button.addTarget(self, action: #selector(singUpTapped), for: .touchUpInside)
@@ -100,7 +98,7 @@ class OpeningViewController: UIViewController {
         let label = UILabel()
         label.text = "Çocuklar için mutluluk bir seçenek değil, zorunluluktur."
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "Lato-Black", size: 17.52)
+        label.font = UIFont(name: "Kalam-Bold", size: FontSize.medium.size)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
@@ -113,7 +111,6 @@ class OpeningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
-
     }
     
     func printFonts() {
