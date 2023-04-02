@@ -94,15 +94,12 @@ class DiaryViewController: UIViewController {
         super.viewDidLoad()
         tableViewSetup()
         configure()
-        tableView.reloadData()
-        loadDiary()
-        print(diaryArray[0].metin)
     }
     
-     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         loadDiary()
          tableView.reloadData()
-         print("DiaryPage Vİew'ı görüntülendi.")
     }
     
     func loadDiary(){
@@ -122,7 +119,6 @@ class DiaryViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = UIView(frame: CGRect.zero)
         tableView.isOpaque = false
-        tableView.isEditing = true
     }
     
     func configure() {

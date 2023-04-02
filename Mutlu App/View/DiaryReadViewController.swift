@@ -34,7 +34,10 @@ class DiaryReadViewController: UIViewController {
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
-        button.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemPink, NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!], for: .normal)
+        button.setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: UIColor.systemPink,
+            NSAttributedString.Key.font: UIFont(name: "Mansalva-Regular", size: 18)!],
+            for: .normal)
         return button
     }
     
@@ -48,7 +51,6 @@ class DiaryReadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configure()
     }
 
