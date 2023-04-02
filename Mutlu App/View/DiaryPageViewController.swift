@@ -56,13 +56,13 @@ class DiaryPageViewController: UIViewController, UITextViewDelegate {
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
          
-            
+            print("kaydet butonu çalıştı.")
             
             let newDiary = Diary(context: context!)
             newDiary.tarih = dateString
             newDiary.metin = text
             
-            diaryViewController.diaryArray.append(newDiary)
+           // diaryViewController.diaryArray.append(newDiary)
             saveDiary()
             dismiss(animated: true, completion: nil)
     

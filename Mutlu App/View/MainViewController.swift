@@ -108,7 +108,7 @@ final class MainViewController: UIViewController {
     }()
     
     private let optionImageView3: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "günlük"))
+        let imageView = UIImageView(image: UIImage(named: "günlük2"))
         imageView.layer.cornerRadius = 10.0
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFit

@@ -26,7 +26,7 @@ class OpeningViewController: UIViewController {
     private let mainLabel : UILabel = {
         let label = UILabel()
         label.text = "Canın\nSıkılırsa\nBuraya\nGel"
-        label.font = UIFont(name: "Kalam-Bold", size: 42)
+        label.font = UIFont(name: "Kalam-Bold", size: FontSize.large.size)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -100,21 +100,22 @@ class OpeningViewController: UIViewController {
         let label = UILabel()
         label.text = "Çocuklar için mutluluk bir seçenek değil, zorunluluktur."
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "Lato-Black", size: 17.52)
+        label.font = UIFont(name: "Kalam-Bold", size: FontSize.medium.size)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1.00, green: 0.62, blue: 0.25, alpha: 1.00)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 27.36
-        label.sizeToFit()
+//        label.adjustsFontSizeToFitWidth = true
+//        label.sizeToFit()
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
-
+        print("kullanılan size'ın boyutu: \(FontSize.medium.size)")
     }
     
     func printFonts() {
@@ -185,7 +186,7 @@ class OpeningViewController: UIViewController {
         
         signUpLabel.snp.makeConstraints { make in
             make.top.equalTo(signUpButton.snp.top)
-            make.leading.equalTo(signUpButton.snp.leading).offset(view.frame.size.width * 0.1)
+            make.leading.equalTo(signUpButton.snp.leading).offset(view.frame.size.width * 0.3)
             make.bottom.equalTo(signUpButton.snp.bottom)
         }
         
