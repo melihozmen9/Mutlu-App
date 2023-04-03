@@ -71,7 +71,6 @@ class QuestionsViewController: UIViewController{
                 // QuestionModel nesnesi oluşturulur ve [questions] dizisine eklenir
                 let question = QuestionModel(title: title, options: options, isOpened: isOpened, image: images)
                 self.sections.append(question)
-                print(self.sections)
             }
             self.tableView.reloadData()
         })
@@ -124,7 +123,6 @@ extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Question",for: indexPath) as? QuestionTableViewCell
             cell?.questionLabel.text = sections[indexPath.section].title
             cell?.configureUrl(with: (sections[indexPath.section].image?[0])! )
-            //cell?.backgroundColor = UIColor(red: 1.00, green: 0.92, blue: 0.65, alpha: 1.00)
             return cell!
         } else {
             let answerCell = tableView.dequeueReusableCell(withIdentifier: "Answer",for: indexPath) as? AnswerTableViewCell

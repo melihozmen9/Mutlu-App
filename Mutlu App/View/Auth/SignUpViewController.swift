@@ -9,6 +9,9 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
+    
+    private let backgroundImage = UIImage(named: "background2")
+    private var backgroundImageView = UIImageView()
 
     private let username: UITextField = {
         let username = UITextField()
@@ -96,7 +99,11 @@ class SignUpViewController: UIViewController {
     
     
     private func configure() {
-        view.backgroundColor = UIColor.white
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.alpha = 0.1
+        backgroundImageView = UIImageView(image: backgroundImage)
+        signUpImageView.isHidden = true
+        view.insertSubview(backgroundImageView, at: 0)
         navigationController?.navigationBar.barTintColor = UIColor.gray
         navigationItem.leftBarButtonItem = backButton
         title = "Kayıt Ol"
@@ -138,6 +145,10 @@ class SignUpViewController: UIViewController {
             make.leading.equalTo(signUpButton.snp.leading)
             make.bottom.equalTo(signUpButton.snp.bottom)
             make.trailing.equalTo(signUpButton.snp.trailing)
+        }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
         }
     }
 }
