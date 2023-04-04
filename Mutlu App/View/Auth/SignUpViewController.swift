@@ -9,6 +9,9 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
+    
+    private let backgroundImage = UIImage(named: "background2")
+    private var backgroundImageView = UIImageView()
 
     private let username: UITextField = {
         let username = UITextField()
@@ -104,7 +107,12 @@ class SignUpViewController: UIViewController {
         view.addSubview(password)
         view.addSubview(signUpButton)
         view.addSubview(signUpImageView)
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.alpha = 0.1
+        backgroundImageView = UIImageView(image: backgroundImage)
+        view.insertSubview(backgroundImageView, at: 0)
         signUpButton.addSubview(signUpLabel)
+        signUpImageView.isHidden = true
         
         username.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(view.frame.size.height * 0.05)
@@ -139,5 +147,10 @@ class SignUpViewController: UIViewController {
             make.bottom.equalTo(signUpButton.snp.bottom)
             make.trailing.equalTo(signUpButton.snp.trailing)
         }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
+        }
+        
     }
 }

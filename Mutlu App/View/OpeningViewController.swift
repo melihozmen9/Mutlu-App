@@ -107,15 +107,12 @@ class OpeningViewController: UIViewController {
         label.backgroundColor = UIColor(red: 1.00, green: 0.62, blue: 0.25, alpha: 1.00)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 27.36
-//        label.adjustsFontSizeToFitWidth = true
-//        label.sizeToFit()
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
-        print("kullanılan size'ın boyutu: \(FontSize.medium.size)")
     }
     
     func printFonts() {
@@ -179,21 +176,19 @@ class OpeningViewController: UIViewController {
         
         loginImageView.snp.makeConstraints { make in
             make.centerY.equalTo(loginLabel.snp.centerY)
-            make.left.equalTo(loginLabel.snp.right)//.offset(view.frame.size.width * 0.05)
-            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.left.equalTo(loginLabel.snp.right)
             make.width.height.equalTo(view.frame.size.height * 0.05)
         }
         
         signUpLabel.snp.makeConstraints { make in
             make.top.equalTo(signUpButton.snp.top)
-            make.leading.equalTo(signUpButton.snp.leading).offset(view.frame.size.width * 0.3)
+            make.leading.equalTo(signUpButton.snp.leading).offset(view.frame.size.width * 0.1)
             make.bottom.equalTo(signUpButton.snp.bottom)
         }
         
         signUpImageView.snp.makeConstraints { make in
             make.centerY.equalTo(signUpLabel.snp.centerY)
-            make.centerX.equalTo(loginImageView)//.offset(view.frame.size.width * 0.05)
-            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.centerX.equalTo(loginImageView)
             make.width.height.equalTo(view.frame.size.height * 0.05)
         }
     }

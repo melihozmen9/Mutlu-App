@@ -18,7 +18,7 @@ class DiaryTableViewCell: UITableViewCell {
         label.adjustsFontSizeToFitWidth = true
         label.sizeToFit()
         label.numberOfLines = 0
-        label.font = UIFont(name: "Baloo2-Regular", size: 20)
+        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
         return label
     }()
     
@@ -46,7 +46,8 @@ class DiaryTableViewCell: UITableViewCell {
     
     func configure() {
         let customView = UIView(frame: contentView.frame)
-        customView.backgroundColor = colorArray.shuffled()[0]
+//        customView.backgroundColor = colorArray.shuffled()[0]
+        customView.backgroundColor = .white
         customView.layer.masksToBounds = true
         customView.layer.cornerRadius = 10
         contentView.addSubview(customView)

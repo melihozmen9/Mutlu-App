@@ -17,6 +17,7 @@
 		21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */; };
 		21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC529C77A3B002B78EA /* Kalam-Light.ttf */; };
 		21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */; };
+		2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2132FC7529DB28A900371F8D /* AdigianaUI.ttf */; };
 		2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */; };
 		2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305929CC3344008F5681 /* DiaryModel.swift */; };
 		2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305B29CC411D008F5681 /* DiaryReadViewController.swift */; };
@@ -47,6 +48,9 @@
 		21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00029CB23DF0061333B /* DiaryViewController.swift */; };
 		21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */; };
 		21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */; };
+		21F7010029DC94EA00564313 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F700FF29DC94EA00564313 /* MenuViewController.swift */; };
+		21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7010229DCB1DD00564313 /* ResourcesViewController.swift */; };
+		21F7010529DCB20100564313 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7010429DCB20100564313 /* AccountViewController.swift */; };
 		21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */; };
 		21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3029C86B040054448A /* QuestionModel.swift */; };
 		21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3429C881300054448A /* QuestionTableViewCell.swift */; };
@@ -78,6 +82,7 @@
 		21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		21317BC529C77A3B002B78EA /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
 		21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mansalva-Regular.ttf"; sourceTree = "<group>"; };
+		2132FC7529DB28A900371F8D /* AdigianaUI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdigianaUI.ttf; sourceTree = "<group>"; };
 		2134305929CC3344008F5681 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		2134305B29CC411D008F5681 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
 		2157143029D9623F007F36AD /* Mutlu App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mutlu App.entitlements"; sourceTree = "<group>"; };
@@ -110,6 +115,9 @@
 		21B9D00029CB23DF0061333B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryPageViewController.swift; sourceTree = "<group>"; };
+		21F700FF29DC94EA00564313 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		21F7010229DCB1DD00564313 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		21F7010429DCB20100564313 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		21FC2C3029C86B040054448A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		21FC2C3429C881300054448A /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 		218975AC29BF12CD0074DA40 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21F7010129DCB1BE00564313 /* MenuViews */,
 				2106D00E29CDCEBD00C3DED3 /* Auth */,
 				215F5A0E29B8827200A3D165 /* OpeningViewController.swift */,
 				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
@@ -244,6 +253,7 @@
 				215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */,
 				21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */,
 				21219BB529C78F5D008E3775 /* Bobby Rough Soft.ttf */,
+				2132FC7529DB28A900371F8D /* AdigianaUI.ttf */,
 				21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */,
 				21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */,
 				21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */,
@@ -253,6 +263,16 @@
 				21B6CFB129BFB38100E3D89F /* futur.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		21F7010129DCB1BE00564313 /* MenuViews */ = {
+			isa = PBXGroup;
+			children = (
+				21F700FF29DC94EA00564313 /* MenuViewController.swift */,
+				21F7010229DCB1DD00564313 /* ResourcesViewController.swift */,
+				21F7010429DCB20100564313 /* AccountViewController.swift */,
+			);
+			path = MenuViews;
 			sourceTree = "<group>";
 		};
 		21FC2C3229C880F90054448A /* Modal */ = {
@@ -405,6 +425,7 @@
 				21B9CFFF29CB21280061333B /* Baloo2-SemiBold.ttf in Resources */,
 				21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */,
 				21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */,
+				2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */,
 				21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */,
 				21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */,
 				2106D00B29CDB72100C3DED3 /* GoogleService-Info.plist in Resources */,
@@ -434,6 +455,7 @@
 			files = (
 				2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */,
 				21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */,
+				21F7010529DCB20100564313 /* AccountViewController.swift in Sources */,
 				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
 				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
@@ -444,9 +466,11 @@
 				21939BBA29D70504006EFA31 /* FontExtension.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
+				21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */,
 				21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */,
 				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
+				21F7010029DC94EA00564313 /* MenuViewController.swift in Sources */,
 				2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,

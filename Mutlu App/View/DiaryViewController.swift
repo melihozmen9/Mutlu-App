@@ -35,8 +35,8 @@ class DiaryViewController: UIViewController {
     
     private let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "Yeni Bir Sayfa"
-        label.font = UIFont(name: "Baloo2-SemiBold", size: 25)
+        label.text = "Yeni Sayfa"
+        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 25)
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -55,17 +55,6 @@ class DiaryViewController: UIViewController {
     }()
     
     var diaryArray = [Diary]()
-    
-//    var savedTexts: [DiaryModel] = [
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "27 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "26 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "25 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "24 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "23 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "22 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "21 Nisan, Çarşamba"),
-//        DiaryModel(diaryText: "SEvgili Gnlük bu bir deneme textidir. kişisel algılama.", date: "20 Nisan, Çarşamba")
-//    ]
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
@@ -142,6 +131,7 @@ class DiaryViewController: UIViewController {
             make.left.equalTo(topView.snp.left).offset(view.frame.size.height * 0.01)
             make.centerY.equalTo(topView.snp.centerY)
             make.width.equalTo(topView.snp.width).multipliedBy(0.7)
+            make.height.equalTo(topView.snp.height).multipliedBy(0.6)
         }
         
         imageview.snp.makeConstraints { make in
