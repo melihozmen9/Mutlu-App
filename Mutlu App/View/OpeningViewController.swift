@@ -174,8 +174,7 @@ class OpeningViewController: UIViewController {
         
         loginImageView.snp.makeConstraints { make in
             make.centerY.equalTo(loginLabel.snp.centerY)
-            make.left.equalTo(loginLabel.snp.right)//.offset(view.frame.size.width * 0.05)
-            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.left.equalTo(loginLabel.snp.right)
             make.width.height.equalTo(view.frame.size.height * 0.05)
         }
         
@@ -187,8 +186,7 @@ class OpeningViewController: UIViewController {
         
         signUpImageView.snp.makeConstraints { make in
             make.centerY.equalTo(signUpLabel.snp.centerY)
-            make.centerX.equalTo(loginImageView)//.offset(view.frame.size.width * 0.05)
-            //make.trailing.equalTo(loginButton.snp.trailing)
+            make.centerX.equalTo(loginImageView)
             make.width.height.equalTo(view.frame.size.height * 0.05)
         }
     }

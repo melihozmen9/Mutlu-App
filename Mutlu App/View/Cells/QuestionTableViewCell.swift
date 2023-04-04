@@ -11,11 +11,6 @@ import Kingfisher
 
 class QuestionTableViewCell: UITableViewCell {
     
-//    var customImageView: UIImageView = {
-//        let image = UIImageView(image: UIImage())
-//        return image
-//    }()
-    
     var customImageView: UIImageView = {
         let image = UIImageView(image: UIImage())
         return image
@@ -32,6 +27,7 @@ class QuestionTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont(name: "Kalam-Bold", size: 20)
+        label.textColor = .white
         return label
     }()
     
@@ -48,7 +44,7 @@ class QuestionTableViewCell: UITableViewCell {
     func configure() {
         
         let customView = UIView(frame: contentView.frame)
-        customView.backgroundColor = UIColor(red: 1.00, green: 0.92, blue: 0.65, alpha: 1.00)
+        customView.backgroundColor = UIColor(red: 0.25, green: 0.75, blue: 0.79, alpha: 1.00)
         customView.layer.masksToBounds = true
         customView.layer.cornerRadius = 10
         contentView.addSubview(customView)

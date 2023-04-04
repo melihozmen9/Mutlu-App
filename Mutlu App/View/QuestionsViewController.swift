@@ -7,6 +7,10 @@ import FirebaseDatabase
 
 class QuestionsViewController: UIViewController{
     
+    
+    private let backgroundImage = UIImage(named: "background3")
+    private var backgroundImageView = UIImageView()
+    
     private let tableView: UITableView = {
         let tableview = UITableView()
         tableview.register(AnswerTableViewCell.self, forCellReuseIdentifier: "Answer")
@@ -21,7 +25,7 @@ class QuestionsViewController: UIViewController{
             .font: UIFont.italicSystemFont(ofSize: 15)
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "Soru sorabilirsin :)", attributes: attributes)
-        textField.backgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.73, alpha: 1.00)
+        textField.backgroundColor = .white
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = 10.0
         return textField
@@ -43,6 +47,13 @@ class QuestionsViewController: UIViewController{
      dismiss(animated: true, completion: nil)
     }
     
+    @objc func menuButtonTapped() {
+        let menuViewController = UINavigationController(rootViewController: MenuViewController())
+            menuViewController.modalPresentationStyle = .overCurrentContext
+            menuViewController.modalTransitionStyle = .crossDissolve
+            present(menuViewController, animated: true, completion: nil)
+    }
+    
     let database = Database.database().reference()
     private var sections = [QuestionModel]()
     
@@ -51,24 +62,26 @@ class QuestionsViewController: UIViewController{
         dataAndTableView()
         configure()
         getQuestions()
+        
     }
     
     func getQuestions() {
-        // Firebase'deki verileri okur
+
         database.child("questions").observeSingleEvent(of: .value, with: { snapshot in
             guard let data = snapshot.value as? [String: [String: Any]] else {
                 return
             }
             
+<<<<<<< HEAD
             // Verileri [QuestionModel] arrayine dönüştürür
+=======
+>>>>>>> feature
             for (_, value) in data {
                 let title = value["title"] as? String ?? ""
                 let options = value["options"] as? [String] ?? []
                 let isOpened = value["isOpened"] as? Bool ?? false
                 let images = value["image"] as? [String] ?? []
-              
                 
-                // QuestionModel nesnesi oluşturulur ve [questions] dizisine eklenir
                 let question = QuestionModel(title: title, options: options, isOpened: isOpened, image: images)
                 self.sections.append(question)
             }
@@ -79,11 +92,15 @@ class QuestionsViewController: UIViewController{
     func configure() {
         view.addSubview(tableView)
         view.addSubview(questionTextField)
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.25, green: 0.75, blue: 0.79, alpha: 1.00)
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.alpha = 0.1
+        backgroundImageView = UIImageView(image: backgroundImage)
+        view.insertSubview(backgroundImageView, at: 0)
         title = "Sorular"
         navigationItem.leftBarButtonItem = backButton
-        tableView.rowHeight = view.frame.size.height * 0.13
-        tableView.separatorStyle = .none
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "menubar.rectangle"), style: .plain, target: self, action: #selector(menuButtonTapped))
+        
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalTo(view)
@@ -96,13 +113,20 @@ class QuestionsViewController: UIViewController{
             make.right.equalTo(view).offset(-10)
             make.bottom.equalTo(view).offset(-10)
         }
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalTo(view)
+        }
     }
     func dataAndTableView() {
-        
+        tableView.rowHeight = view.frame.size.height * 0.13
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor(red: 0.25, green: 0.75, blue: 0.79, alpha: 1.00)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
     }
+   
 }
 
 
@@ -139,9 +163,9 @@ extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
-            return view.frame.size.height * 0.15 // QuestionTableViewCell için yükseklik
+            return view.frame.size.height * 0.15
         } else {
-            return view.frame.size.height * 0.45// AnswerTableViewCell için yükseklik
+            return view.frame.size.height * 0.45
         }
     }
     

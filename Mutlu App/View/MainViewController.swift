@@ -92,7 +92,7 @@ final class MainViewController: UIViewController {
         let imageView = UIImageView(image: UIImage(named: "çizgiFilm"))
         imageView.layer.cornerRadius = 10.0
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
