@@ -45,6 +45,8 @@ class MenuViewController: UIViewController {
         button.backgroundColor = .white
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10.0
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.5
         return button
     }()
     

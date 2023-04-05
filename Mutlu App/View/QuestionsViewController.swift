@@ -31,7 +31,13 @@ class QuestionsViewController: UIViewController{
         return textField
     }()
     
-    
+    private let sendButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
+        return button
+    }()
     
     private func createBackButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(backButtonTapped))
@@ -45,6 +51,10 @@ class QuestionsViewController: UIViewController{
     
     @objc private func backButtonTapped() {
      dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func sendTapped() {
+        sendQuestion()
     }
     
     @objc func menuButtonTapped() {
@@ -89,9 +99,16 @@ class QuestionsViewController: UIViewController{
         })
     }
     
-    func configure() {
-        view.addSubview(tableView)
-        view.addSubview(questionTextField)
+    func sendQuestion() {
+        if let questionText = questionTextField.text {
+            let questionRef = database.child("sorular").childByAutoId()
+            questionRef.setValue(questionText)
+        }
+        questionTextField.text = ""
+        questionTextField.placeholder = "Sorun gönderildi. Başka sorun var mı?"
+    }
+    
+    func design() {
         view.backgroundColor = UIColor(red: 0.25, green: 0.75, blue: 0.79, alpha: 1.00)
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.alpha = 0.1
@@ -100,6 +117,13 @@ class QuestionsViewController: UIViewController{
         title = "Sorular"
         navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "menubar.rectangle"), style: .plain, target: self, action: #selector(menuButtonTapped))
+    }
+    
+    func configure() {
+        design()
+        view.addSubview(tableView)
+        view.addSubview(questionTextField)
+        view.addSubview(sendButton)
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -110,10 +134,14 @@ class QuestionsViewController: UIViewController{
         questionTextField.snp.makeConstraints { make in
             make.top.equalTo(tableView.snp.bottom).offset(10)
             make.left.equalTo(view).offset(10)
+            make.right.equalTo(sendButton.snp.left).offset(-10)
+            make.bottom.equalTo(view).offset(-10)
+        }
+        sendButton.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom).offset(10)
             make.right.equalTo(view).offset(-10)
             make.bottom.equalTo(view).offset(-10)
         }
-        
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
@@ -156,8 +184,6 @@ extension QuestionsViewController: UITableViewDelegate, UITableViewDataSource {
             answerCell!.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
             return answerCell!
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

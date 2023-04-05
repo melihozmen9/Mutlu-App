@@ -26,12 +26,19 @@ class AccountViewController: UIViewController {
     
     private let deleteButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Hesabımı Sil", for: .normal)
         button.addTarget(self, action: #selector(deletePressed),for: .touchUpInside)
         button.backgroundColor = .white
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10.0
         return button
+    }()
+    
+    private let deleteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hesabımı Sil"
+        label.textAlignment = .center
+        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
+        return label
     }()
     
     private func createBackButton() -> UIBarButtonItem {
@@ -86,6 +93,9 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
+       getName()
+    }
+    func getName() {
         if let email = Auth.auth().currentUser?.email {
             let username = email.replacingOccurrences(of: "@gmail.com", with: "")
             usernameLabel.text = "Username: \(username)"
@@ -93,11 +103,11 @@ class AccountViewController: UIViewController {
     }
     
     
-    
     func configure() {
         design()
         view.addSubview(deleteButton)
         view.addSubview(usernameLabel)
+        deleteButton.addSubview(deleteLabel)
         
         usernameLabel.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -109,6 +119,10 @@ class AccountViewController: UIViewController {
             make.width.equalTo(view.snp.width).multipliedBy(0.4)
             make.height.equalTo(view.snp.height).multipliedBy(0.1)
 
+        }
+        
+        deleteLabel.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(deleteButton)
         }
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
