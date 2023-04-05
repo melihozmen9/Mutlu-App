@@ -82,10 +82,6 @@ class QuestionsViewController: UIViewController{
                 return
             }
             
-<<<<<<< HEAD
-            // Verileri [QuestionModel] arrayine dönüştürür
-=======
->>>>>>> feature
             for (_, value) in data {
                 let title = value["title"] as? String ?? ""
                 let options = value["options"] as? [String] ?? []

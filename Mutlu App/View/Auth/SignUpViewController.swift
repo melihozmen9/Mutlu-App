@@ -156,9 +156,5 @@ class SignUpViewController: UIViewController {
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> feature
     }
 }
