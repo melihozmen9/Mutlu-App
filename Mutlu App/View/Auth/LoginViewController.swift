@@ -25,6 +25,7 @@ final class LoginViewController: UIViewController {
         username.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: attributes)
         username.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
         username.layer.cornerRadius = 10.0
+        username.autocapitalizationType = .none
         return username
     }()
     
@@ -62,7 +63,7 @@ final class LoginViewController: UIViewController {
         
         let auth = Auth.auth()
         
-        auth.signIn(withEmail: "Mutlu@gmail.com", password: "123456") { (authResult,error) in
+        auth.signIn(withEmail: username.text! + "@gmail.com", password: password.text!) { (authResult,error) in
             if error != nil {
                 self.present(Service.createAlertController(title: "OK", message: error!.localizedDescription), animated: true, completion: nil)
                 return

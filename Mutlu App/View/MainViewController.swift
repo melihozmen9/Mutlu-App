@@ -20,6 +20,7 @@ final class MainViewController: UIViewController {
         label.text = "Hoşgeldin İSİM"
         label.textAlignment = .center
         label.font = UIFont(name: "Verdana-Bold", size: 16)
+        label.numberOfLines = 0
         return label
     }()
 
@@ -65,7 +66,6 @@ final class MainViewController: UIViewController {
     }()
     
     @objc func optionLabel1Tapped(_ sender: UITapGestureRecognizer) {
-       // Kodunuzu buraya yazın
         let questionViewController = UINavigationController(rootViewController: QuestionsViewController())
         questionViewController.modalPresentationStyle = .fullScreen
         questionViewController.modalTransitionStyle = .crossDissolve
@@ -73,7 +73,6 @@ final class MainViewController: UIViewController {
     }
     
     @objc func optionLabel2Tapped(_ sender: UITapGestureRecognizer) {
-       // Kodunuzu buraya yazın
         let videoViewController = UINavigationController(rootViewController: VideoViewController())
         videoViewController.modalPresentationStyle = .fullScreen
         videoViewController.modalTransitionStyle = .crossDissolve
@@ -81,7 +80,6 @@ final class MainViewController: UIViewController {
     }
     
     @objc func optionLabel3Tapped(_ sender: UITapGestureRecognizer) {
-       // Kodunuzu buraya yazın
         let diaryViewController = UINavigationController(rootViewController: DiaryViewController())
         diaryViewController.modalPresentationStyle = .fullScreen
         diaryViewController.modalTransitionStyle = .crossDissolve
@@ -156,7 +154,14 @@ final class MainViewController: UIViewController {
 
         configure()
         setupLabelTap()
+        getName()
+    }
     
+    func getName() {
+        if let email = Auth.auth().currentUser?.email {
+            let username = email.replacingOccurrences(of: "@gmail.com", with: "")
+            topLabel.text = "Hoşgeldin \(username)"
+        }
     }
     
     private func buttons(){
