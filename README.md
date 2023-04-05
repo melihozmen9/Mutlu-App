@@ -46,6 +46,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 # Screenshots
 
-<img src="https://user-images.githubusercontent.com/105754659/230212722-d2059d12-cf7f-430a-9e55-8a33f82c6676.png" width="200"><img src="https://user-images.githubusercontent.com/105754659/230212889-80d1b330-1ef2-4fab-ad4a-c355f2e6913d.png" width="200">
-<img src="https://user-images.githubusercontent.com/105754659/230212906-144b33ca-8931-4ff9-a91b-2b21fcadbfe0.png" width="200"><img src="https://user-images.githubusercontent.com/105754659/230212931-050cc76f-49a1-4524-afc5-2cdee8b9becf.png" width="200">
+<img src="https://user-images.githubusercontent.com/105754659/230213908-304526ed-6516-465c-8356-11584eedc451.png" width="200"><img src="https://user-images.githubusercontent.com/105754659/230212906-144b33ca-8931-4ff9-a91b-2b21fcadbfe0.png" width="200">
+<img src="https://user-images.githubusercontent.com/105754659/230212722-d2059d12-cf7f-430a-9e55-8a33f82c6676.png" width="200"><img src="https://user-images.githubusercontent.com/105754659/230212931-050cc76f-49a1-4524-afc5-2cdee8b9becf.png" width="200">
 
