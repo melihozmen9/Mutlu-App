@@ -25,6 +25,7 @@ final class LoginViewController: UIViewController {
         username.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: attributes)
         username.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
         username.layer.cornerRadius = 10.0
+        username.autocapitalizationType = .none
         return username
     }()
     
