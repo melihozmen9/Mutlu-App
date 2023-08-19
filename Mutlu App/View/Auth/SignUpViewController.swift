@@ -7,52 +7,39 @@
 
 import UIKit
 import Firebase
+import TinyConstraints
 
 class SignUpViewController: UIViewController {
     
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
 
-    private let username: UITextField = {
-        let username = UITextField()
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont(name: "Mansalva-Regular", size: 22)!
-        ]
-        username.attributedPlaceholder = NSAttributedString(string: "Nickname", attributes: attributes)
-        username.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
-        username.layer.cornerRadius = 10.0
+    private let username: CustomTextField = {
+        let username = CustomTextField()
+        username.attributedPlaceholder = NSAttributedString(string: "Kullanıcı adın", attributes: username.attributes)
         username.autocapitalizationType = .none
         return username
     }()
     
-    private let password: UITextField = {
-        let password = UITextField()
+    private let password: CustomTextField = {
+        let password = CustomTextField()
         password.isSecureTextEntry = true
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont(name: "Mansalva-Regular", size: 22)!
-        ]
-        password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
-        password.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
-        password.layer.cornerRadius = 10.0
+        password.attributedPlaceholder = NSAttributedString(string: "Şifre", attributes: password.attributes)
         return password
     }()
     
-    private let signUpLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Giriş Yap"
-        label.textAlignment = .center
-        label.font = UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
-        return label
-    }()
+   
     
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont(name: "EduNSWACTFoundation-Bold", size: 20)
+        ]
+        button.setAttributedTitle(NSAttributedString(string: "Giriş Yap", attributes: attributes), for: .normal)
         button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button
     }()
@@ -93,6 +80,42 @@ class SignUpViewController: UIViewController {
      dismiss(animated: true, completion: nil)
     }
     
+    private lazy var parentBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
+        btn.layer.cornerRadius = 10.0
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont(name: "EduNSWACTFoundation-Bold", size: 12)
+        ]
+        btn.setAttributedTitle(NSAttributedString(string: "Ebeveyn kayıt sayfasına git", attributes: attributes), for: .normal)
+        btn.addTarget(self, action: #selector(parentTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func parentTapped() {
+        
+    }
+    
+    private lazy var volunteerBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
+        btn.layer.cornerRadius = 10.0
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont(name: "EduNSWACTFoundation-Bold", size: 12)
+        ]
+        btn.setAttributedTitle(NSAttributedString(string: "Gönüllü kayıt sayfasına git", attributes: attributes), for: .normal)
+        btn.addTarget(self, action: #selector(volunteerTapped), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func volunteerTapped() {
+        let vc = VolunteerSignUpVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -108,15 +131,12 @@ class SignUpViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.gray
         navigationItem.leftBarButtonItem = backButton
         title = "Kayıt Ol"
-        view.addSubview(username)
-        view.addSubview(password)
-        view.addSubview(signUpButton)
-        view.addSubview(signUpImageView)
+        view.addSubViews(username,password,signUpButton,signUpImageView,parentBtn,volunteerBtn)
+        
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.alpha = 0.1
         backgroundImageView = UIImageView(image: backgroundImage)
         view.insertSubview(backgroundImageView, at: 0)
-        signUpButton.addSubview(signUpLabel)
         signUpImageView.isHidden = true
         
         username.snp.makeConstraints { make in
@@ -146,19 +166,21 @@ class SignUpViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
         
-        signUpLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.top)
-            make.leading.equalTo(signUpButton.snp.leading)
-            make.bottom.equalTo(signUpButton.snp.bottom)
-            make.trailing.equalTo(signUpButton.snp.trailing)
-        }
+
+        parentBtn.width(150)
+        parentBtn.topToBottom(of: signUpButton, offset: view.frame.size.height * 0.2)
+        parentBtn.height(view.frame.size.height * 0.06)
+        parentBtn.centerXToSuperview()
+        
+        volunteerBtn.width(150)
+        volunteerBtn.height(view.frame.size.height * 0.06)
+        volunteerBtn.topToBottom(of: parentBtn,offset: view.frame.size.height * 0.02)
+        volunteerBtn.centerXToSuperview()
+
+        
         
         backgroundImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalTo(view)
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> feature
     }
 }

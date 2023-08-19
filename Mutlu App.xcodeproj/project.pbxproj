@@ -38,6 +38,10 @@
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		21939BBA29D70504006EFA31 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21939BB929D70504006EFA31 /* FontExtension.swift */; };
 		21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 21ADCF7529D438B40097E5DD /* Kingfisher */; };
+		21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DAC2A909AA00021938F /* CustomTextField.swift */; };
+		21B15DAF2A909C3B0021938F /* VolunteerSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */; };
+		21B15DB22A90A1CF0021938F /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 21B15DB12A90A1CF0021938F /* TinyConstraints */; };
+		21B15DB52A90A3830021938F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DB42A90A3830021938F /* Extensions.swift */; };
 		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
 		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
 		21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF629CAE3E40061333B /* VideoModel.swift */; };
@@ -105,6 +109,9 @@
 		2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2161BDE029C0A9E400C47023 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		21939BB929D70504006EFA31 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		21B15DAC2A909AA00021938F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerSignUpVC.swift; sourceTree = "<group>"; };
+		21B15DB42A90A3830021938F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
 		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		21B9CFF629CAE3E40061333B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
@@ -129,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B15DB22A90A1CF0021938F /* TinyConstraints in Frameworks */,
 				21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */,
 				218975BD29BF34F70074DA40 /* SnapKit in Frameworks */,
 				2106D00529CDB14000C3DED3 /* FirebaseAuth in Frameworks */,
@@ -160,6 +168,7 @@
 			children = (
 				2161BDDB29C0522C00C47023 /* LoginViewController.swift */,
 				2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */,
+				21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 		215F5A0929B8827200A3D165 /* Mutlu App */ = {
 			isa = PBXGroup;
 			children = (
+				21B15DB32A90A3710021938F /* Extensions Enums */,
 				2157143029D9623F007F36AD /* Mutlu App.entitlements */,
 				218975AD29BF12E10074DA40 /* Core */,
 				218975AC29BF12CD0074DA40 /* View */,
@@ -215,6 +225,7 @@
 		218975AC29BF12CD0074DA40 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21B15DAB2A909A750021938F /* CustomClass */,
 				21F7010129DCB1BE00564313 /* MenuViews */,
 				2106D00E29CDCEBD00C3DED3 /* Auth */,
 				215F5A0E29B8827200A3D165 /* OpeningViewController.swift */,
@@ -263,6 +274,22 @@
 				21B6CFB129BFB38100E3D89F /* futur.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		21B15DAB2A909A750021938F /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				21B15DAC2A909AA00021938F /* CustomTextField.swift */,
+			);
+			name = CustomClass;
+			sourceTree = "<group>";
+		};
+		21B15DB32A90A3710021938F /* Extensions Enums */ = {
+			isa = PBXGroup;
+			children = (
+				21B15DB42A90A3830021938F /* Extensions.swift */,
+			);
+			path = "Extensions Enums";
 			sourceTree = "<group>";
 		};
 		21F7010129DCB1BE00564313 /* MenuViews */ = {
@@ -319,6 +346,7 @@
 				2106D00629CDB14000C3DED3 /* FirebaseDatabase */,
 				2106D00829CDB14000C3DED3 /* FirebaseFirestore */,
 				21ADCF7529D438B40097E5DD /* Kingfisher */,
+				21B15DB12A90A1CF0021938F /* TinyConstraints */,
 			);
 			productName = "Mutlu App";
 			productReference = 215F5A0729B8827200A3D165 /* Mutlu App.app */;
@@ -397,6 +425,7 @@
 				2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				2106D00329CDB14000C3DED3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = 215F5A0829B8827200A3D165 /* Products */;
 			projectDirPath = "";
@@ -457,11 +486,13 @@
 				21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */,
 				21F7010529DCB20100564313 /* AccountViewController.swift in Sources */,
 				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
+				21B15DB52A90A3830021938F /* Extensions.swift in Sources */,
 				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
 				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
 				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
+				21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */,
 				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
 				21939BBA29D70504006EFA31 /* FontExtension.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
@@ -471,6 +502,7 @@
 				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
 				21F7010029DC94EA00564313 /* MenuViewController.swift in Sources */,
+				21B15DAF2A909C3B0021938F /* VolunteerSignUpVC.swift in Sources */,
 				2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,
@@ -665,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.melih.test1.Mutlu-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Melih Özmen";
@@ -699,7 +731,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.melih.test1.Mutlu-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Melih Özmen";
@@ -860,6 +892,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -892,6 +932,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		21B15DB12A90A1CF0021938F /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */
 
