@@ -17,6 +17,9 @@
 		21317BC729C77A3B002B78EA /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */; };
 		21317BC829C77A3B002B78EA /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC529C77A3B002B78EA /* Kalam-Light.ttf */; };
 		21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */; };
+		2131CCB32A9B8FCD0011CDC3 /* LetterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131CCB22A9B8FCD0011CDC3 /* LetterVC.swift */; };
+		2131CCB52A9BA5CB0011CDC3 /* PenpalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131CCB42A9BA5CB0011CDC3 /* PenpalListVC.swift */; };
+		2131CCB72A9BB33E0011CDC3 /* EnvelopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131CCB62A9BB33E0011CDC3 /* EnvelopeCell.swift */; };
 		2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2132FC7529DB28A900371F8D /* AdigianaUI.ttf */; };
 		2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */; };
 		2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305929CC3344008F5681 /* DiaryModel.swift */; };
@@ -86,6 +89,9 @@
 		21317BC429C77A3B002B78EA /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		21317BC529C77A3B002B78EA /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
 		21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mansalva-Regular.ttf"; sourceTree = "<group>"; };
+		2131CCB22A9B8FCD0011CDC3 /* LetterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterVC.swift; sourceTree = "<group>"; };
+		2131CCB42A9BA5CB0011CDC3 /* PenpalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenpalListVC.swift; sourceTree = "<group>"; };
+		2131CCB62A9BB33E0011CDC3 /* EnvelopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCell.swift; sourceTree = "<group>"; };
 		2132FC7529DB28A900371F8D /* AdigianaUI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdigianaUI.ttf; sourceTree = "<group>"; };
 		2134305929CC3344008F5681 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		2134305B29CC411D008F5681 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
@@ -196,9 +202,11 @@
 		215F5A0929B8827200A3D165 /* Mutlu App */ = {
 			isa = PBXGroup;
 			children = (
+				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
+				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
+				218975AD29BF12E10074DA40 /* Core */,
 				21B15DB32A90A3710021938F /* Extensions Enums */,
 				2157143029D9623F007F36AD /* Mutlu App.entitlements */,
-				218975AD29BF12E10074DA40 /* Core */,
 				218975AC29BF12CD0074DA40 /* View */,
 				21FC2C3229C880F90054448A /* Modal */,
 			);
@@ -235,7 +243,9 @@
 				21B9D00029CB23DF0061333B /* DiaryViewController.swift */,
 				21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */,
 				2134305B29CC411D008F5681 /* DiaryReadViewController.swift */,
+				2131CCB22A9B8FCD0011CDC3 /* LetterVC.swift */,
 				21FC2C3329C881040054448A /* Cells */,
+				2131CCB42A9BA5CB0011CDC3 /* PenpalListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,10 +255,8 @@
 			children = (
 				218975AE29BF2BFA0074DA40 /* Fonts */,
 				215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */,
-				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
 				215F5A1629B8827400A3D165 /* Assets.xcassets */,
 				2106D00A29CDB72100C3DED3 /* GoogleService-Info.plist */,
-				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
 				215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */,
 				215F5A1B29B8827400A3D165 /* Info.plist */,
 				2106D00C29CDC9A800C3DED3 /* Service.swift */,
@@ -319,6 +327,7 @@
 				21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */,
 				21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */,
 				21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */,
+				2131CCB62A9BB33E0011CDC3 /* EnvelopeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -488,16 +497,19 @@
 				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
 				21B15DB52A90A3830021938F /* Extensions.swift in Sources */,
 				2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */,
+				2131CCB32A9B8FCD0011CDC3 /* LetterVC.swift in Sources */,
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
 				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
 				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
 				21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */,
 				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
+				2131CCB72A9BB33E0011CDC3 /* EnvelopeCell.swift in Sources */,
 				21939BBA29D70504006EFA31 /* FontExtension.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
 				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
 				21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */,
+				2131CCB52A9BA5CB0011CDC3 /* PenpalListVC.swift in Sources */,
 				21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */,
 				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
