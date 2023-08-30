@@ -17,7 +17,7 @@ final class LoginViewController: UIViewController {
     
     private let username: UITextField = {
         let username = UITextField()
-        
+        username.text =  "melihc1"
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .font: UIFont.italicSystemFont(ofSize: 22)
@@ -39,6 +39,7 @@ final class LoginViewController: UIViewController {
         password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
         password.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
         password.layer.cornerRadius = 10.0
+        password.text = "123456"
         return password
     }()
     

@@ -46,14 +46,39 @@ class SignUpViewController: UIViewController {
 
     @objc func signUpTapped() {
         let auth = Auth.auth()
-        auth.createUser(withEmail: (username.text! + "@gmail.com"), password: password.text!) { (authResult, error) in
-            if error != nil {
-                self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
+        guard let name = username.text, let password = password.text else { return }
+        
+        auth.createUser(withEmail: (name + "@gmail.com"), password: password) { (authResult, error) in
+            if let error = error {
+                self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else if let user = authResult?.user {
+                let userID = user.uid  // Kullanıcının UID'si
+                
+                let databaseRef = Database.database().reference()
+                
+                // Volunteers verilerini ekleyin
+                let childrenData: [String: Any] = [
+                    "name": name,
+                    "userID": userID,
+                    "count": 0,
+                    "type" : "child"
+                ]
+                
+                // Volunteers düğümü altına verileri ekle
+                databaseRef.child("children").childByAutoId().setValue(childrenData) { (error, ref) in
+                    if let error = error {
+                        print("Error writing volunteers data to Realtime Database: \(error)")
+                    } else {
+                        print("Volunteers data written to Realtime Database successfully.")
+                        
+                        // Ana sayfaya yönlendirme
+                        let mainViewController = UINavigationController(rootViewController: MainViewController())
+                        mainViewController.modalPresentationStyle = .fullScreen
+                        mainViewController.modalTransitionStyle = .crossDissolve
+                        self.present(mainViewController, animated: true, completion: nil)
+                    }
+                }
             }
-            let mainViewController = UINavigationController(rootViewController: MainViewController())
-            mainViewController.modalPresentationStyle = .fullScreen
-            mainViewController.modalTransitionStyle = .crossDissolve
-            self.present(mainViewController, animated: true, completion: nil)
         }
        
     }

@@ -43,27 +43,49 @@ class VolunteerSignUpVC: UIViewController {
         button.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 1.00)
         button.layer.cornerRadius = 10.0
         button.frame.size.width = 40
+        button.setTitle("kayıt ol", for: .normal)
         button.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         return button
     }()
 
     @objc func signUpTapped1(_ sender: UITapGestureRecognizer) {
+        let auth = Auth.auth()
+        guard let name = nameTf.text, let password = passwordTf.text else { return }
         
+        auth.createUser(withEmail: (name + "@gmail.com"), password: password) { (authResult, error) in
+            if let error = error {
+                self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else if let user = authResult?.user {
+                let userID = user.uid  // Kullanıcının UID'si
+                
+                let databaseRef = Database.database().reference()
+                
+                // Volunteers verilerini ekleyin
+                let volunteersData: [String: Any] = [
+                    "name": name,
+                    "userID": userID,
+                    "count": 0,
+                    "type" : "volunteer"
+                ]
+                
+                // Volunteers düğümü altına verileri ekle
+                databaseRef.child("volunteers").childByAutoId().setValue(volunteersData) { (error, ref) in
+                    if let error = error {
+                        print("Error writing volunteers data to Realtime Database: \(error)")
+                    } else {
+                        print("Volunteers data written to Realtime Database successfully.")
+                        
+                        // Ana sayfaya yönlendirme
+                        let mainViewController = UINavigationController(rootViewController: MainViewController())
+                        mainViewController.modalPresentationStyle = .fullScreen
+                        mainViewController.modalTransitionStyle = .crossDissolve
+                        self.present(mainViewController, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
-    @objc func signUpTapped() {
-//        let auth = Auth.auth()
-//        auth.createUser(withEmail: (username.text! + "@gmail.com"), password: password.text!) { (authResult, error) in
-//            if error != nil {
-//                self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
-//            }
-//            let mainViewController = UINavigationController(rootViewController: MainViewController())
-//            mainViewController.modalPresentationStyle = .fullScreen
-//            mainViewController.modalTransitionStyle = .crossDissolve
-//            self.present(mainViewController, animated: true, completion: nil)
-//        }
-       
-    }
     
     
     private lazy var stackView: UIStackView = {
@@ -84,6 +106,45 @@ class VolunteerSignUpVC: UIViewController {
         super.viewDidLoad()
 
        setupView()
+        setupLabelTap()
+    }
+    
+    @objc func signUpTapped() {
+        
+        let auth = Auth.auth()
+        guard let name = nameTf.text, let password = passwordTf.text else { return }
+        
+        auth.createUser(withEmail: (name + "@gmail.com"), password: password) { (authResult, error) in
+            if let error = error {
+                self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else if let user = authResult?.user {
+                let userID = user.uid  // Kullanıcının UID'si
+                
+                let databaseRef = Database.database().reference()
+                
+                // Volunteers verilerini ekleyin
+                let volunteersData: [String: Any] = [
+                    "name": name,
+                    "userID": userID,
+                    "count": 0
+                ]
+                
+                // Volunteers düğümü altına verileri ekle
+                databaseRef.child("volunteers").childByAutoId().setValue(volunteersData) { (error, ref) in
+                    if let error = error {
+                        print("Error writing volunteers data to Realtime Database: \(error)")
+                    } else {
+                        print("Volunteers data written to Realtime Database successfully.")
+                        
+                        // Ana sayfaya yönlendirme
+                        let mainViewController = UINavigationController(rootViewController: MainViewController())
+                        mainViewController.modalPresentationStyle = .fullScreen
+                        mainViewController.modalTransitionStyle = .crossDissolve
+                        self.present(mainViewController, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
     func setupLabelTap() {

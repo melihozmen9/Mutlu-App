@@ -23,7 +23,7 @@
 		2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2132FC7529DB28A900371F8D /* AdigianaUI.ttf */; };
 		2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */; };
 		2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305929CC3344008F5681 /* DiaryModel.swift */; };
-		2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305B29CC411D008F5681 /* DiaryReadViewController.swift */; };
+		2134305C29CC411D008F5681 /* LetterReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305B29CC411D008F5681 /* LetterReadViewController.swift */; };
 		2158A91729C459200011A437 /* Edu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2158A91629C459200011A437 /* Edu-Bold.ttf */; };
 		215E9CC929C44FC3007B8387 /* Sono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */; };
 		215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F5A0A29B8827200A3D165 /* AppDelegate.swift */; };
@@ -38,6 +38,7 @@
 		2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDDB29C0522C00C47023 /* LoginViewController.swift */; };
 		2161BDDE29C07CFE00C47023 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */; };
 		2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161BDE029C0A9E400C47023 /* MainViewController.swift */; };
+		21860CE42A9F81E60096CCF3 /* Volunteer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21860CE32A9F81E60096CCF3 /* Volunteer.swift */; };
 		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		21939BBA29D70504006EFA31 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21939BB929D70504006EFA31 /* FontExtension.swift */; };
 		21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 21ADCF7529D438B40097E5DD /* Kingfisher */; };
@@ -52,9 +53,9 @@
 		21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */; };
 		21B9CFFE29CB21280061333B /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */; };
 		21B9CFFF29CB21280061333B /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */; };
-		21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00029CB23DF0061333B /* DiaryViewController.swift */; };
+		21B9D00129CB23DF0061333B /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00029CB23DF0061333B /* LetterViewController.swift */; };
 		21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */; };
-		21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */; };
+		21B9D00529CB7FBD0061333B /* LetterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00429CB7FBD0061333B /* LetterPageViewController.swift */; };
 		21F7010029DC94EA00564313 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F700FF29DC94EA00564313 /* MenuViewController.swift */; };
 		21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7010229DCB1DD00564313 /* ResourcesViewController.swift */; };
 		21F7010529DCB20100564313 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7010429DCB20100564313 /* AccountViewController.swift */; };
@@ -94,7 +95,7 @@
 		2131CCB62A9BB33E0011CDC3 /* EnvelopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCell.swift; sourceTree = "<group>"; };
 		2132FC7529DB28A900371F8D /* AdigianaUI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AdigianaUI.ttf; sourceTree = "<group>"; };
 		2134305929CC3344008F5681 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
-		2134305B29CC411D008F5681 /* DiaryReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReadViewController.swift; sourceTree = "<group>"; };
+		2134305B29CC411D008F5681 /* LetterReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterReadViewController.swift; sourceTree = "<group>"; };
 		2157143029D9623F007F36AD /* Mutlu App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mutlu App.entitlements"; sourceTree = "<group>"; };
 		2158A91629C459200011A437 /* Edu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edu-Bold.ttf"; sourceTree = "<group>"; };
 		215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sono-Bold.ttf"; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		2161BDDB29C0522C00C47023 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2161BDDD29C07CFE00C47023 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2161BDE029C0A9E400C47023 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		21860CE32A9F81E60096CCF3 /* Volunteer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volunteer.swift; sourceTree = "<group>"; };
 		21939BB929D70504006EFA31 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		21B15DAC2A909AA00021938F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerSignUpVC.swift; sourceTree = "<group>"; };
@@ -125,9 +127,9 @@
 		21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		21B9CFFC29CB21280061333B /* Baloo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Regular.ttf"; sourceTree = "<group>"; };
 		21B9CFFD29CB21280061333B /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-SemiBold.ttf"; sourceTree = "<group>"; };
-		21B9D00029CB23DF0061333B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		21B9D00029CB23DF0061333B /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
-		21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryPageViewController.swift; sourceTree = "<group>"; };
+		21B9D00429CB7FBD0061333B /* LetterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPageViewController.swift; sourceTree = "<group>"; };
 		21F700FF29DC94EA00564313 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		21F7010229DCB1DD00564313 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		21F7010429DCB20100564313 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -240,9 +242,9 @@
 				2161BDE029C0A9E400C47023 /* MainViewController.swift */,
 				21FC2C2E29C85BAE0054448A /* QuestionsViewController.swift */,
 				21B9CFF829CAEB4B0061333B /* VideoViewController.swift */,
-				21B9D00029CB23DF0061333B /* DiaryViewController.swift */,
-				21B9D00429CB7FBD0061333B /* DiaryPageViewController.swift */,
-				2134305B29CC411D008F5681 /* DiaryReadViewController.swift */,
+				21B9D00029CB23DF0061333B /* LetterViewController.swift */,
+				21B9D00429CB7FBD0061333B /* LetterPageViewController.swift */,
+				2134305B29CC411D008F5681 /* LetterReadViewController.swift */,
 				2131CCB22A9B8FCD0011CDC3 /* LetterVC.swift */,
 				21FC2C3329C881040054448A /* Cells */,
 				2131CCB42A9BA5CB0011CDC3 /* PenpalListVC.swift */,
@@ -316,6 +318,7 @@
 				21FC2C3029C86B040054448A /* QuestionModel.swift */,
 				21B9CFF629CAE3E40061333B /* VideoModel.swift */,
 				2134305929CC3344008F5681 /* DiaryModel.swift */,
+				21860CE32A9F81E60096CCF3 /* Volunteer.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -492,7 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2161BDE129C0A9E400C47023 /* MainViewController.swift in Sources */,
-				21B9D00129CB23DF0061333B /* DiaryViewController.swift in Sources */,
+				21B9D00129CB23DF0061333B /* LetterViewController.swift in Sources */,
 				21F7010529DCB20100564313 /* AccountViewController.swift in Sources */,
 				21FC2C3529C881300054448A /* QuestionTableViewCell.swift in Sources */,
 				21B15DB52A90A3830021938F /* Extensions.swift in Sources */,
@@ -501,6 +504,7 @@
 				215F5A0F29B8827200A3D165 /* OpeningViewController.swift in Sources */,
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
 				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
+				21860CE42A9F81E60096CCF3 /* Volunteer.swift in Sources */,
 				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
 				21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */,
 				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
@@ -510,12 +514,12 @@
 				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
 				21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */,
 				2131CCB52A9BA5CB0011CDC3 /* PenpalListVC.swift in Sources */,
-				21B9D00529CB7FBD0061333B /* DiaryPageViewController.swift in Sources */,
+				21B9D00529CB7FBD0061333B /* LetterPageViewController.swift in Sources */,
 				21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */,
 				215F5A0B29B8827200A3D165 /* AppDelegate.swift in Sources */,
 				21F7010029DC94EA00564313 /* MenuViewController.swift in Sources */,
 				21B15DAF2A909C3B0021938F /* VolunteerSignUpVC.swift in Sources */,
-				2134305C29CC411D008F5681 /* DiaryReadViewController.swift in Sources */,
+				2134305C29CC411D008F5681 /* LetterReadViewController.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
 				21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */,
 				2106D00D29CDC9A800C3DED3 /* Service.swift in Sources */,

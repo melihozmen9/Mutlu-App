@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navController = UINavigationController(rootViewController: PenpalListVC())
+        let navController = UINavigationController(rootViewController: OpeningViewController())
         navController.navigationBar.barTintColor = UIColor.white
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

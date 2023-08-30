@@ -7,7 +7,11 @@
 
 import UIKit
 import TinyConstraints
+import FirebaseDatabase
+
 class LetterVC: UIViewController {
+    
+    var penpalIDKey: String?
     
     private lazy var imageview: UIImageView = {
         let iv = UIImageView()
@@ -69,12 +73,36 @@ class LetterVC: UIViewController {
     }
     
     @objc func saveButtonTapped(_ sender: UIButton) {
-        if let text = letterTV.text, !text.isEmpty {
+        print("butona baısldı")
+        if let text = letterTV.text {
             let formatter = DateFormatter()
             let locale = Locale(identifier: "tr_TR")
             formatter.locale = locale
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
+            
+            let lettersData: [String: Any] = [
+                   "text": text,
+                   "date": dateString,
+                   "sender": "child" // Bu kısmı gerekirse volunteer olarak güncelleyebilirsiniz
+               ]
+            
+            let databaseRef = Database.database().reference()
+            
+            guard let penpalIDKey = penpalIDKey else {return }
+            print(penpalIDKey)
+            let newPenpalsRef = databaseRef.child("penpals").child(penpalIDKey)
+            let newLetterRef = newPenpalsRef.child("letters").childByAutoId() // selectedPenpalsID, güncellenmek istenen penpals verisinin ID'si olmalı
+            newLetterRef.setValue(lettersData) { (error, ref) in
+                if let error = error {
+                    print("Error adding letter data: \(error.localizedDescription)")
+                } else {
+                    print("Letter data added successfully.")
+                }
+            }
+            
+            
+            
             dismiss(animated: true, completion: nil)
         }
     }
