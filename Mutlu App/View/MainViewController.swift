@@ -80,7 +80,7 @@ final class MainViewController: UIViewController {
     }
     
     @objc func optionLabel3Tapped(_ sender: UITapGestureRecognizer) {
-        let diaryViewController = UINavigationController(rootViewController: DiaryViewController())
+        let diaryViewController = UINavigationController(rootViewController: LettersViewController())
         diaryViewController.modalPresentationStyle = .fullScreen
         diaryViewController.modalTransitionStyle = .crossDissolve
          present(diaryViewController, animated: true, completion: nil)

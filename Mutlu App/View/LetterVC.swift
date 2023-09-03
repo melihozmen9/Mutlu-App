@@ -12,7 +12,7 @@ import FirebaseDatabase
 class LetterVC: UIViewController {
     
     var penpalIDKey: String?
-    
+    var userType: String?
     private lazy var imageview: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleToFill
@@ -80,18 +80,23 @@ class LetterVC: UIViewController {
             formatter.locale = locale
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
+            print(dateString)
             
             let lettersData: [String: Any] = [
                    "text": text,
                    "date": dateString,
-                   "sender": "child" // Bu kısmı gerekirse volunteer olarak güncelleyebilirsiniz
+                   "sender": userType 
                ]
+            let dateData: [String:String] = [
+                "lastDate": dateString
+            ]
             
             let databaseRef = Database.database().reference()
             
-            guard let penpalIDKey = penpalIDKey else {return }
+             guard let penpalIDKey = penpalIDKey else {return }
             print(penpalIDKey)
             let newPenpalsRef = databaseRef.child("penpals").child(penpalIDKey)
+            newPenpalsRef.updateChildValues(dateData)
             let newLetterRef = newPenpalsRef.child("letters").childByAutoId() // selectedPenpalsID, güncellenmek istenen penpals verisinin ID'si olmalı
             newLetterRef.setValue(lettersData) { (error, ref) in
                 if let error = error {

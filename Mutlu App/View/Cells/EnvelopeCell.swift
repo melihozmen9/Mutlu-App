@@ -11,7 +11,7 @@ class EnvelopeCell: UITableViewCell {
     
     private lazy var imageview: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "envelope")
         return iv
     }()
@@ -38,6 +38,11 @@ class EnvelopeCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    func configure(data:[String]){
+        nameLbl.text = data[0]
+        Lbl.text = data[1]
+    }
+    
     
     private func setupView() {
         self.contentView.addSubViews(imageview)

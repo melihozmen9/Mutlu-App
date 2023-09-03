@@ -13,7 +13,7 @@ import CoreData
 class DiaryPageViewController: UIViewController, UITextViewDelegate {
     
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    let diaryViewController = DiaryViewController()
+    let diaryViewController = LettersViewController()
     
     private let backgroundImage = UIImage(named: "background2")
     private var backgroundImageView = UIImageView()
