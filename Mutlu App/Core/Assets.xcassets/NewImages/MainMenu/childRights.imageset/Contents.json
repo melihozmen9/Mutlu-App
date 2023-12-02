@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "children-with-disabilities-standing-together-2914235-2430711 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

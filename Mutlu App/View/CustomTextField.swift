@@ -19,10 +19,10 @@ class CustomTextField: UITextField {
     init(insets:UIEdgeInsets = UIEdgeInsets(top:0,left:10,bottom: 0,right:12)) {
         self.insets = insets
         super.init(frame: .zero)
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont(name: "Mansalva-Regular", size: 22)!
-        ]
+//        let attributes: [NSAttributedString.Key: Any] = [
+//            .foregroundColor: UIColor.white,
+//            .font: UIFont(name: "Mansalva-Regular", size: 22)!
+//        ]
        self.backgroundColor = UIColor(red: 0.98, green: 0.83, blue: 0.56, alpha: 0.5)
        self.layer.cornerRadius = 10.0
     }

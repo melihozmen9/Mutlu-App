@@ -16,6 +16,11 @@
 		<string>Baloo2-SemiBold.ttf</string>
 		<string>Baloo2-Regular.ttf</string>
 		<string>AdigianaUI.ttf</string>
+		<string>KoHo-Bold.ttf</string>
+		<string>KoHo-SemiBold.ttf</string>
+		<string>KoHo-Medium.ttf</string>
+		<string>KoHo-Regular.ttf</string>
+		<string>Urbanist-Medium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

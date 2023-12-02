@@ -31,7 +31,7 @@ class LetterVC: UIViewController {
     private var letterTV: UITextView = {
         let textView = UITextView()
         textView.textColor = .black
-        textView.backgroundColor = .clear
+        textView.backgroundColor = .white
         textView.layer.masksToBounds = true
         textView.layer.cornerRadius = 10
         textView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -58,9 +58,6 @@ class LetterVC: UIViewController {
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return button
     }()
-    
-    
-   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +78,11 @@ class LetterVC: UIViewController {
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
             print(dateString)
-            
             let lettersData: [String: Any] = [
                    "text": text,
                    "date": dateString,
-                   "sender": userType 
+                   "sender": userType,
+                   "isFiltered" : false
                ]
             let dateData: [String:String] = [
                 "lastDate": dateString
