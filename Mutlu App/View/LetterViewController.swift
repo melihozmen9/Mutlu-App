@@ -214,7 +214,7 @@ class LettersViewController: UIViewController {
         getUserType(userID: userID) { userType in
             if userType == "child" {
                 
-                self.getPenpalIDs(userID: userID, database: "children") { (penpalIDs, error) in
+                self.getPenpalIDs2(userID: userID, database: "children") { (penpalIDs, error) in
                     if let error = error {
                         print("Veri çekme hatası: \(error.localizedDescription)")
                     } else if let penpalIDs = penpalIDs {
@@ -222,7 +222,7 @@ class LettersViewController: UIViewController {
                     }
                 }
             } else {
-                self.getPenpalIDs(userID: userID, database: "volunteers") { (penpalIDs, error) in
+                self.getPenpalIDs2(userID: userID, database: "volunteers") { (penpalIDs, error) in
                     if let error = error {
                         print("Veri çekme hatası: \(error.localizedDescription)")
                     } else if let penpalIDs = penpalIDs {
@@ -236,7 +236,7 @@ class LettersViewController: UIViewController {
   
 
     
-    func getPenpalIDs(userID: String, database: String, completion: @escaping ([String]?, Error?) -> Void) {
+    func getPenpalIDs2(userID: String, database: String, completion: @escaping ([String]?, Error?) -> Void) {
         let reference = databaseRef.child(database)
 
            // Veritabanındaki belirli bir kullanıcıyı sorgulayın ve penpalIDs alanını alın.

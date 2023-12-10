@@ -21,6 +21,9 @@
 		<string>KoHo-Medium.ttf</string>
 		<string>KoHo-Regular.ttf</string>
 		<string>Urbanist-Medium.ttf</string>
+		<string>Vollkorn-Bold.ttf</string>
+		<string>Vollkorn-SemiBold.ttf</string>
+		<string>Vollkorn-Medium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

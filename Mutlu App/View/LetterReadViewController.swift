@@ -84,24 +84,23 @@ class ReadLetterViewController: UIViewController {
     func getLetters(forPenpalID penpalID: String, completion: @escaping ([[String: Any]]?) -> Void) {
         let penpalRef = databaseRef.child("penpals").child(penpalID)
         
-        // PenpalID'ye ait mektupları çekmek için sorgu oluşturun.
         let lettersRef = penpalRef.child("letters")
         
         lettersRef.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists() {
-                // Mektuplar verisi bulunduğunda çekilen veriyi işleyin.
+                
                 if let lettersData = snapshot.value as? [String: [String: Any]] {
-                    // Mektupların verilerini bir dizi olarak alın.
+                   
                     let lettersArray = lettersData.values.map { $0 }
                     completion(lettersArray)
                 } else {
-                    // Mektup verileri doğru çekilemediyse hata döndürün.
+            
                     let error = NSError(domain: "com.example.app", code: 101, userInfo: [NSLocalizedDescriptionKey: "Mektup verileri çekilemedi"])
                     print(error)
                     completion(nil)
                 }
             } else {
-                // PenpalID bulunamadıysa hata döndürün.
+               
                 let error = NSError(domain: "com.example.app", code: 102, userInfo: [NSLocalizedDescriptionKey: "PenpalID bulunamadı"])
                 print(error)
                 completion(nil)

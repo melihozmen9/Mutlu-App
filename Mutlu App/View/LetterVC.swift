@@ -102,9 +102,6 @@ class LetterVC: UIViewController {
                     print("Letter data added successfully.")
                 }
             }
-            
-            
-            
             dismiss(animated: true, completion: nil)
         }
     }
