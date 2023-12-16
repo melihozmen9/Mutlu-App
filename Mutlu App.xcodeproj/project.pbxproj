@@ -85,6 +85,10 @@
 		21C548102B1268D500894A01 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 21C5480F2B1268D500894A01 /* FirebaseFunctions */; };
 		21C548122B1268D500894A01 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 21C548112B1268D500894A01 /* FirebaseMessaging */; };
 		21C548142B1268D500894A01 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21C548132B1268D500894A01 /* FirebaseStorage */; };
+		21CAF61B2B2608E600315D7C /* ChildRightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF61A2B2608E600315D7C /* ChildRightsVC.swift */; };
+		21CAF61E2B28E71700315D7C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF61D2B28E71700315D7C /* ProfileVC.swift */; };
+		21CAF6212B28EBBF00315D7C /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF6202B28EBBF00315D7C /* NotificationVC.swift */; };
+		21CAF6232B28EBF000315D7C /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF6222B28EBF000315D7C /* NotificationCell.swift */; };
 		21F0B1362B1B21800073F433 /* ZoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F0B1352B1B21800073F433 /* ZoomVC.swift */; };
 		21F0B1382B1B247A0073F433 /* ZoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F0B1372B1B247A0073F433 /* ZoomCell.swift */; };
 		21F0B13A2B1B308D0073F433 /* ZoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F0B1392B1B308D0073F433 /* ZoomModel.swift */; };
@@ -199,6 +203,10 @@
 		21B9D00029CB23DF0061333B /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		21B9D00429CB7FBD0061333B /* LetterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPageViewController.swift; sourceTree = "<group>"; };
+		21CAF61A2B2608E600315D7C /* ChildRightsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRightsVC.swift; sourceTree = "<group>"; };
+		21CAF61D2B28E71700315D7C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		21CAF6202B28EBBF00315D7C /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		21CAF6222B28EBF000315D7C /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		21F0B1352B1B21800073F433 /* ZoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomVC.swift; sourceTree = "<group>"; };
 		21F0B1372B1B247A0073F433 /* ZoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCell.swift; sourceTree = "<group>"; };
 		21F0B1392B1B308D0073F433 /* ZoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomModel.swift; sourceTree = "<group>"; };
@@ -288,6 +296,7 @@
 		215F5A0929B8827200A3D165 /* Mutlu App */ = {
 			isa = PBXGroup;
 			children = (
+				21CAF6172B2608A100315D7C /* Resources */,
 				215F5A0A29B8827200A3D165 /* AppDelegate.swift */,
 				215F5A0C29B8827200A3D165 /* SceneDelegate.swift */,
 				218975AD29BF12E10074DA40 /* Core */,
@@ -383,6 +392,8 @@
 		219095602AFA3ABF001FD4AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21CAF61F2B28EB9E00315D7C /* NotificationVC */,
+				21CAF61C2B28E70100315D7C /* Profile */,
 				21A75F802B000DF300575A4D /* PhotoPickerVC */,
 				2190956A2AFA4942001FD4AA /* CustomClass */,
 				219095692AFA3D33001FD4AA /* ChildRightVC */,
@@ -478,6 +489,7 @@
 		219095692AFA3D33001FD4AA /* ChildRightVC */ = {
 			isa = PBXGroup;
 			children = (
+				21CAF61A2B2608E600315D7C /* ChildRightsVC.swift */,
 			);
 			path = ChildRightVC;
 			sourceTree = "<group>";
@@ -518,6 +530,30 @@
 				21B15DB42A90A3830021938F /* Extensions.swift */,
 			);
 			path = "Extensions Enums";
+			sourceTree = "<group>";
+		};
+		21CAF6172B2608A100315D7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21CAF61C2B28E70100315D7C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				21CAF61D2B28E71700315D7C /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		21CAF61F2B28EB9E00315D7C /* NotificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				21CAF6202B28EBBF00315D7C /* NotificationVC.swift */,
+				21CAF6222B28EBF000315D7C /* NotificationCell.swift */,
+			);
+			path = NotificationVC;
 			sourceTree = "<group>";
 		};
 		21F7010129DCB1BE00564313 /* MenuViews */ = {
@@ -744,6 +780,7 @@
 				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
 				21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */,
 				215F34232AFF80C900CAF27A /* CstmTextField.swift in Sources */,
+				21CAF6232B28EBF000315D7C /* NotificationCell.swift in Sources */,
 				21F0B13A2B1B308D0073F433 /* ZoomModel.swift in Sources */,
 				21FC2C3129C86B040054448A /* QuestionModel.swift in Sources */,
 				2131CCB72A9BB33E0011CDC3 /* EnvelopeCell.swift in Sources */,
@@ -752,6 +789,7 @@
 				21F0B13C2B1B44260073F433 /* LettersMainVC.swift in Sources */,
 				21A75F842B00113200575A4D /* PhotoCell.swift in Sources */,
 				215F5A1529B8827200A3D165 /* Mutlu_App.xcdatamodeld in Sources */,
+				21CAF61B2B2608E600315D7C /* ChildRightsVC.swift in Sources */,
 				21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */,
 				21F7010329DCB1DD00564313 /* ResourcesViewController.swift in Sources */,
 				2131CCB52A9BA5CB0011CDC3 /* PenpalListVC.swift in Sources */,
@@ -766,6 +804,7 @@
 				21598D952B1C5880006B7B1A /* LetterWriteVC.swift in Sources */,
 				219095702AFA6202001FD4AA /* CustomTF.swift in Sources */,
 				21B15DAF2A909C3B0021938F /* VolunteerSignUpVC.swift in Sources */,
+				21CAF6212B28EBBF00315D7C /* NotificationVC.swift in Sources */,
 				2134305C29CC411D008F5681 /* LetterReadViewController.swift in Sources */,
 				21F0B1402B1B556A0073F433 /* LetterHelperVC.swift in Sources */,
 				2161BDDC29C0522C00C47023 /* LoginViewController.swift in Sources */,
@@ -783,6 +822,7 @@
 				215F34252AFF931600CAF27A /* loginTypeSquare.swift in Sources */,
 				216A469B2B11ED510058A14F /* GetStartedVC.swift in Sources */,
 				21FFE16F2B02A6E000FD1A85 /* VideosVC.swift in Sources */,
+				21CAF61E2B28E71700315D7C /* ProfileVC.swift in Sources */,
 				215F5A0D29B8827200A3D165 /* SceneDelegate.swift in Sources */,
 				21F97D0A2B00A40400C52D53 /* OptionView.swift in Sources */,
 				216BC4762B13553500CC52B9 /* OtherLogin.swift in Sources */,
@@ -958,8 +998,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mutlu App/Mutlu App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3UA862X9S;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -978,7 +1018,7 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.melih.test1.Mutlu-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Melih Özmen";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -992,8 +1032,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mutlu App/Mutlu App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3UA862X9S;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1012,7 +1052,7 @@
 				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.melih.test1.Mutlu-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Melih Özmen";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
