@@ -15,7 +15,7 @@ class ProfileVC: UIViewController, PhotoChanger {
     
     var profilePicture: String? = "empty"
     var userType: UserType? = nil
-    
+    var userID: String?
     var sectionTitles = ["Bilgilerim","Ayarlar","Kaynakça"]
     
     private lazy var topImageview: UIImageView = {

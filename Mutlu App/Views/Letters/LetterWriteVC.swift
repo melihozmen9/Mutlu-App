@@ -120,6 +120,18 @@ class LetterWriteVC: UIViewController, UITextViewDelegate {
                textView.textColor = .lightGray
            }
        }
+  
+  func getFCMToken(completion: @escaping (String?) -> Void) {
+      Messaging.messaging().token(completion: { token, error in
+          if let error = error {
+              print("FCM token alınamadı: \(error.localizedDescription)")
+              completion(nil)
+          } else if let token = token {
+              print("FCM token başarıyla alındı: \(token)")
+              completion(token)
+          }
+      })
+  }
 
     @objc func sendTapped() {
         print("butona baısldı")
@@ -139,13 +151,29 @@ class LetterWriteVC: UIViewController, UITextViewDelegate {
             let dateData: [String:String] = [
                 "lastDate": dateString
             ]
-            
+          
+          getFCMToken { token in
+         
+            guard let token = token else {return}
             let databaseRef = Database.database().reference()
             
-             guard let penpalIDKey = penpalIDKey else {return }
+            guard let penpalIDKey = self.penpalIDKey else {return }
             print(penpalIDKey)
             let newPenpalsRef = databaseRef.child("penpals").child(penpalIDKey)
             newPenpalsRef.updateChildValues(dateData)
+           
+            if self.userType == .child {
+                      let childDeviceData: [String:String] = [
+                                    "childDeviceID": token
+                                ]
+                                newPenpalsRef.updateChildValues(childDeviceData)
+            } else {
+              
+                    let volunteerDeviceData: [String:String] = [
+                                  "volunteerDeviceID": token
+                              ]
+                              newPenpalsRef.updateChildValues(volunteerDeviceData)
+                      }
             let newLetterRef = newPenpalsRef.child("letters").childByAutoId() // selectedPenpalsID, güncellenmek istenen penpals verisinin ID'si olmalı
             newLetterRef.setValue(lettersData) { (error, ref) in
                 if let error = error {
@@ -161,6 +189,8 @@ class LetterWriteVC: UIViewController, UITextViewDelegate {
                     self.navigationController?.popToViewController(targetViewController, animated: true)
                 }
             }
+            
+          }
         }
     }
     

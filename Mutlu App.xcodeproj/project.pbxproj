@@ -18,7 +18,6 @@
 		2131CCB52A9BA5CB0011CDC3 /* PenpalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131CCB42A9BA5CB0011CDC3 /* PenpalListVC.swift */; };
 		2131CCB72A9BB33E0011CDC3 /* EnvelopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131CCB62A9BB33E0011CDC3 /* EnvelopeCell.swift */; };
 		2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2132FC7529DB28A900371F8D /* AdigianaUI.ttf */; };
-		2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */; };
 		2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305929CC3344008F5681 /* DiaryModel.swift */; };
 		2134305C29CC411D008F5681 /* LetterReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134305B29CC411D008F5681 /* LetterReadViewController.swift */; };
 		2153005B2AA4DC08003FA9D5 /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2153005A2AA4DC08003FA9D5 /* LetterCell.swift */; };
@@ -50,7 +49,6 @@
 		216A469D2B11F03D0058A14F /* GetStartedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A469C2B11F03D0058A14F /* GetStartedCell.swift */; };
 		216BC4762B13553500CC52B9 /* OtherLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BC4752B13553500CC52B9 /* OtherLogin.swift */; };
 		21860CE42A9F81E60096CCF3 /* Volunteer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21860CE32A9F81E60096CCF3 /* Volunteer.swift */; };
-		218975BD29BF34F70074DA40 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 218975BC29BF34F70074DA40 /* SnapKit */; };
 		219095582AFA1F7A001FD4AA /* KoHo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219095542AFA1F7A001FD4AA /* KoHo-Regular.ttf */; };
 		219095592AFA1F7A001FD4AA /* KoHo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219095552AFA1F7A001FD4AA /* KoHo-Bold.ttf */; };
 		2190955A2AFA1F7A001FD4AA /* KoHo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 219095562AFA1F7A001FD4AA /* KoHo-Medium.ttf */; };
@@ -65,13 +63,9 @@
 		21A75F7C2AFFEA6600575A4D /* OtherSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A75F7B2AFFEA6600575A4D /* OtherSignUpVC.swift */; };
 		21A75F822B000E3F00575A4D /* PhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A75F812B000E3F00575A4D /* PhotoPickerVC.swift */; };
 		21A75F842B00113200575A4D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A75F832B00113200575A4D /* PhotoCell.swift */; };
-		21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 21ADCF7529D438B40097E5DD /* Kingfisher */; };
 		21B15DAD2A909AA00021938F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DAC2A909AA00021938F /* CustomTextField.swift */; };
 		21B15DAF2A909C3B0021938F /* VolunteerSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */; };
-		21B15DB22A90A1CF0021938F /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 21B15DB12A90A1CF0021938F /* TinyConstraints */; };
 		21B15DB52A90A3830021938F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B15DB42A90A3830021938F /* Extensions.swift */; };
-		21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB129BFB38100E3D89F /* futur.ttf */; };
-		21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */; };
 		21B9CFF729CAE3E40061333B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF629CAE3E40061333B /* VideoModel.swift */; };
 		21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFF829CAEB4B0061333B /* VideoViewController.swift */; };
 		21B9CFFB29CAF4EA0061333B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */; };
@@ -80,11 +74,6 @@
 		21B9D00129CB23DF0061333B /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00029CB23DF0061333B /* LetterViewController.swift */; };
 		21B9D00329CB3B140061333B /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00229CB3B140061333B /* DiaryTableViewCell.swift */; };
 		21B9D00529CB7FBD0061333B /* LetterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9D00429CB7FBD0061333B /* LetterPageViewController.swift */; };
-		21C5480C2B1268D500894A01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 21C5480B2B1268D500894A01 /* FirebaseAuth */; };
-		21C5480E2B1268D500894A01 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 21C5480D2B1268D500894A01 /* FirebaseDatabase */; };
-		21C548102B1268D500894A01 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 21C5480F2B1268D500894A01 /* FirebaseFunctions */; };
-		21C548122B1268D500894A01 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 21C548112B1268D500894A01 /* FirebaseMessaging */; };
-		21C548142B1268D500894A01 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21C548132B1268D500894A01 /* FirebaseStorage */; };
 		21CAF61B2B2608E600315D7C /* ChildRightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF61A2B2608E600315D7C /* ChildRightsVC.swift */; };
 		21CAF61E2B28E71700315D7C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF61D2B28E71700315D7C /* ProfileVC.swift */; };
 		21CAF6212B28EBBF00315D7C /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAF6202B28EBBF00315D7C /* NotificationVC.swift */; };
@@ -109,6 +98,16 @@
 		21FC2C3729C88B5A0054448A /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */; };
 		21FFE16F2B02A6E000FD1A85 /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FFE16E2B02A6E000FD1A85 /* VideosVC.swift */; };
 		21FFE1712B02A76F00FD1A85 /* AnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FFE1702B02A76F00FD1A85 /* AnswerVC.swift */; };
+		4BA896502B2ED99F006CE512 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA8964F2B2ED99F006CE512 /* MainTabBarController.swift */; };
+		4BBD16452B2D9C1A008F3E5D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16442B2D9C1A008F3E5D /* FirebaseAuth */; };
+		4BBD16472B2D9C1A008F3E5D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16462B2D9C1A008F3E5D /* FirebaseDatabase */; };
+		4BBD16492B2D9C1A008F3E5D /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16482B2D9C1A008F3E5D /* FirebaseFunctions */; };
+		4BBD164B2B2D9C1A008F3E5D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD164A2B2D9C1A008F3E5D /* FirebaseMessaging */; };
+		4BBD164D2B2D9C1A008F3E5D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD164C2B2D9C1A008F3E5D /* FirebaseStorage */; };
+		4BBD16502B2D9C2F008F3E5D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD164F2B2D9C2F008F3E5D /* SnapKit */; };
+		4BBD16532B2D9C65008F3E5D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16522B2D9C65008F3E5D /* Kingfisher */; };
+		4BBD16562B2D9C8F008F3E5D /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16552B2D9C8F008F3E5D /* TinyConstraints */; };
+		4BBD16592B2D9CAF008F3E5D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4BBD16582B2D9CAF008F3E5D /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,8 +192,6 @@
 		21B15DAC2A909AA00021938F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		21B15DAE2A909C3B0021938F /* VolunteerSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerSignUpVC.swift; sourceTree = "<group>"; };
 		21B15DB42A90A3830021938F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		21B6CFB129BFB38100E3D89F /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = futur.ttf; path = ../../../../../../../Downloads/futur.ttf; sourceTree = "<group>"; };
-		21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../../Downloads/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		21B9CFF629CAE3E40061333B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		21B9CFF829CAEB4B0061333B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		21B9CFFA29CAF4EA0061333B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +224,7 @@
 		21FC2C3629C88B590054448A /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		21FFE16E2B02A6E000FD1A85 /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
 		21FFE1702B02A76F00FD1A85 /* AnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerVC.swift; sourceTree = "<group>"; };
+		4BA8964F2B2ED99F006CE512 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,15 +232,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C548122B1268D500894A01 /* FirebaseMessaging in Frameworks */,
-				21C5480E2B1268D500894A01 /* FirebaseDatabase in Frameworks */,
-				21C548142B1268D500894A01 /* FirebaseStorage in Frameworks */,
-				21C548102B1268D500894A01 /* FirebaseFunctions in Frameworks */,
-				21B15DB22A90A1CF0021938F /* TinyConstraints in Frameworks */,
-				21C5480C2B1268D500894A01 /* FirebaseAuth in Frameworks */,
-				21ADCF7629D438B40097E5DD /* Kingfisher in Frameworks */,
-				218975BD29BF34F70074DA40 /* SnapKit in Frameworks */,
-				2134305829CC26F3008F5681 /* IQKeyboardManagerSwift in Frameworks */,
+				4BBD164B2B2D9C1A008F3E5D /* FirebaseMessaging in Frameworks */,
+				4BBD16492B2D9C1A008F3E5D /* FirebaseFunctions in Frameworks */,
+				4BBD16532B2D9C65008F3E5D /* Kingfisher in Frameworks */,
+				4BBD16562B2D9C8F008F3E5D /* TinyConstraints in Frameworks */,
+				4BBD16472B2D9C1A008F3E5D /* FirebaseDatabase in Frameworks */,
+				4BBD16592B2D9CAF008F3E5D /* IQKeyboardManagerSwift in Frameworks */,
+				4BBD16502B2D9C2F008F3E5D /* SnapKit in Frameworks */,
+				4BBD164D2B2D9C1A008F3E5D /* FirebaseStorage in Frameworks */,
+				4BBD16452B2D9C1A008F3E5D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +347,12 @@
 		218975AD29BF12E10074DA40 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				215F5A1B29B8827400A3D165 /* Info.plist */,
 				218975AE29BF2BFA0074DA40 /* Fonts */,
 				215F5A1329B8827200A3D165 /* Mutlu_App.xcdatamodeld */,
 				215F5A1629B8827400A3D165 /* Assets.xcassets */,
 				2106D00A29CDB72100C3DED3 /* GoogleService-Info.plist */,
 				215F5A1829B8827400A3D165 /* LaunchScreen.storyboard */,
-				215F5A1B29B8827400A3D165 /* Info.plist */,
 				2106D00C29CDC9A800C3DED3 /* Service.swift */,
 				21939BB929D70504006EFA31 /* FontExtension.swift */,
 				2190955E2AFA20A2001FD4AA /* Enums.swift */,
@@ -365,7 +363,6 @@
 		218975AE29BF2BFA0074DA40 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				21B6CFB329BFC42A00E3D89F /* Montserrat-Bold.ttf */,
 				215E9CC829C44FC3007B8387 /* Sono-Bold.ttf */,
 				21317BC929C77A5D002B78EA /* Mansalva-Regular.ttf */,
 				219095552AFA1F7A001FD4AA /* KoHo-Bold.ttf */,
@@ -384,7 +381,6 @@
 				2190955C2AFA2076001FD4AA /* Urbanist-Medium.ttf */,
 				21317BC329C77A3A002B78EA /* Kalam-Regular.ttf */,
 				2158A91629C459200011A437 /* Edu-Bold.ttf */,
-				21B6CFB129BFB38100E3D89F /* futur.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -392,6 +388,7 @@
 		219095602AFA3ABF001FD4AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BA8964E2B2ED989006CE512 /* TabBar */,
 				21CAF61F2B28EB9E00315D7C /* NotificationVC */,
 				21CAF61C2B28E70100315D7C /* Profile */,
 				21A75F802B000DF300575A4D /* PhotoPickerVC */,
@@ -591,6 +588,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4BA8964E2B2ED989006CE512 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4BA8964F2B2ED99F006CE512 /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,15 +613,15 @@
 			);
 			name = "Mutlu App";
 			packageProductDependencies = (
-				218975BC29BF34F70074DA40 /* SnapKit */,
-				2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */,
-				21ADCF7529D438B40097E5DD /* Kingfisher */,
-				21B15DB12A90A1CF0021938F /* TinyConstraints */,
-				21C5480B2B1268D500894A01 /* FirebaseAuth */,
-				21C5480D2B1268D500894A01 /* FirebaseDatabase */,
-				21C5480F2B1268D500894A01 /* FirebaseFunctions */,
-				21C548112B1268D500894A01 /* FirebaseMessaging */,
-				21C548132B1268D500894A01 /* FirebaseStorage */,
+				4BBD16442B2D9C1A008F3E5D /* FirebaseAuth */,
+				4BBD16462B2D9C1A008F3E5D /* FirebaseDatabase */,
+				4BBD16482B2D9C1A008F3E5D /* FirebaseFunctions */,
+				4BBD164A2B2D9C1A008F3E5D /* FirebaseMessaging */,
+				4BBD164C2B2D9C1A008F3E5D /* FirebaseStorage */,
+				4BBD164F2B2D9C2F008F3E5D /* SnapKit */,
+				4BBD16522B2D9C65008F3E5D /* Kingfisher */,
+				4BBD16552B2D9C8F008F3E5D /* TinyConstraints */,
+				4BBD16582B2D9CAF008F3E5D /* IQKeyboardManagerSwift */,
 			);
 			productName = "Mutlu App";
 			productReference = 215F5A0729B8827200A3D165 /* Mutlu App.app */;
@@ -691,11 +696,11 @@
 			);
 			mainGroup = 215F59FE29B8827200A3D165;
 			packageReferences = (
-				218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */,
-				21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4BBD164E2B2D9C2F008F3E5D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4BBD16512B2D9C65008F3E5D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4BBD16542B2D9C8F008F3E5D /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				4BBD16572B2D9CAF008F3E5D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 215F5A0829B8827200A3D165 /* Products */;
 			projectDirPath = "";
@@ -722,7 +727,6 @@
 				21219BB629C78F5D008E3775 /* Bobby Rough Soft.ttf in Resources */,
 				21598D992B1C5DE8006B7B1A /* Vollkorn-Medium.ttf in Resources */,
 				21317BC629C77A3B002B78EA /* Kalam-Regular.ttf in Resources */,
-				21B6CFB429BFC42A00E3D89F /* Montserrat-Bold.ttf in Resources */,
 				215F5A1729B8827400A3D165 /* Assets.xcassets in Resources */,
 				21598D9A2B1C5DE8006B7B1A /* Vollkorn-SemiBold.ttf in Resources */,
 				21B9CFFF29CB21280061333B /* Baloo2-SemiBold.ttf in Resources */,
@@ -734,7 +738,6 @@
 				2132FC7629DB28A900371F8D /* AdigianaUI.ttf in Resources */,
 				219095582AFA1F7A001FD4AA /* KoHo-Regular.ttf in Resources */,
 				21317BCA29C77A5D002B78EA /* Mansalva-Regular.ttf in Resources */,
-				21B6CFB229BFB38100E3D89F /* futur.ttf in Resources */,
 				2106D00B29CDB72100C3DED3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,6 +778,7 @@
 				21FC2C2F29C85BAE0054448A /* QuestionsViewController.swift in Sources */,
 				21B9CFF929CAEB4B0061333B /* VideoViewController.swift in Sources */,
 				2190955F2AFA20A2001FD4AA /* Enums.swift in Sources */,
+				4BA896502B2ED99F006CE512 /* MainTabBarController.swift in Sources */,
 				21F0B1422B1B6A350073F433 /* EmptyLetterView.swift in Sources */,
 				21860CE42A9F81E60096CCF3 /* Volunteer.swift in Sources */,
 				2134305A29CC3344008F5681 /* DiaryModel.swift in Sources */,
@@ -1178,15 +1182,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = exactVersion;
-				version = 6.5.3;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
 			};
 		};
-		218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		4BBD164E2B2D9C2F008F3E5D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1194,7 +1198,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		4BBD16512B2D9C65008F3E5D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -1202,69 +1206,69 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+		4BBD16542B2D9C8F008F3E5D /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/TinyConstraints";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
-		21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		4BBD16572B2D9CAF008F3E5D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2134305729CC26F3008F5681 /* IQKeyboardManagerSwift */ = {
+		4BBD16442B2D9C1A008F3E5D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2134305629CC26F3008F5681 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		218975BC29BF34F70074DA40 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 218975BB29BF34F70074DA40 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		21ADCF7529D438B40097E5DD /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21ADCF7429D438B40097E5DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		21B15DB12A90A1CF0021938F /* TinyConstraints */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21B15DB02A90A1CF0021938F /* XCRemoteSwiftPackageReference "TinyConstraints" */;
-			productName = TinyConstraints;
-		};
-		21C5480B2B1268D500894A01 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		21C5480D2B1268D500894A01 /* FirebaseDatabase */ = {
+		4BBD16462B2D9C1A008F3E5D /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		21C5480F2B1268D500894A01 /* FirebaseFunctions */ = {
+		4BBD16482B2D9C1A008F3E5D /* FirebaseFunctions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
 		};
-		21C548112B1268D500894A01 /* FirebaseMessaging */ = {
+		4BBD164A2B2D9C1A008F3E5D /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		21C548132B1268D500894A01 /* FirebaseStorage */ = {
+		4BBD164C2B2D9C1A008F3E5D /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21C5480A2B1268D500894A01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BBD16432B2D9C1A008F3E5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		4BBD164F2B2D9C2F008F3E5D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BBD164E2B2D9C2F008F3E5D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		4BBD16522B2D9C65008F3E5D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BBD16512B2D9C65008F3E5D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		4BBD16552B2D9C8F008F3E5D /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BBD16542B2D9C8F008F3E5D /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+		4BBD16582B2D9CAF008F3E5D /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BBD16572B2D9CAF008F3E5D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

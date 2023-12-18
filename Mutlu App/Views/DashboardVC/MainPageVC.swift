@@ -17,6 +17,7 @@ class MainPageVC: UIViewController {
     var userID: String?
     var profilePicture: URL?
     var ageRange: AgeRange?
+  var name: String?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -197,11 +198,11 @@ class MainPageVC: UIViewController {
         
         guard let userID = userID, let userType = userType else { return }
         
-        getUserDetails(userID: userID, database: returnDatabase(userType: userType)) { username, profile in
-            guard let username = username, let profile = profile else { return }
-            
-            self.configure(username: username, profileURL: profile)
-        }
+//        getUserDetails(userID: userID, database: returnDatabase(userType: userType)) { username, profile in
+//            guard let username = username, let profile = profile else { return }
+//
+//            self.configure(username: username, profileURL: profile)
+//        }
     }
     
     @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
@@ -226,16 +227,16 @@ class MainPageVC: UIViewController {
             rightIV.image = UIImage(named: userType == .child ? "duckPaper" : "aMain")
         }
     }
-    func returnDatabase(userType: UserType) -> String {
-        switch userType {
-        case .volunteer:
-            return "volunteers"
-        case .parent:
-            return "parents"
-        case .child:
-            return "children"
-        }
-    }
+//    func returnDatabase(userType: UserType) -> String {
+//        switch userType {
+//        case .volunteer:
+//            return "volunteers"
+//        case .parent:
+//            return "parents"
+//        case .child:
+//            return "children"
+//        }
+//    }
     
     public func addTapgestureToIV(){
         emotionView1.isUserInteractionEnabled = true
@@ -262,49 +263,49 @@ class MainPageVC: UIViewController {
 
 
     
-    func getUserDetails(userID: String, database: String, completion: @escaping (String?, String?) -> Void) {
-        let databaseRef = Database.database().reference()
-        let reference = databaseRef.child(database).child(userID)
-
-        reference.observeSingleEvent(of: .value) { (snapshot) in
-            guard snapshot.exists() else {
-                // Kullanıcı bulunamadıysa hata döndürün.
-                print("Kullanıcı bulunamadıysa hata döndürün")
-                let error = NSError(domain: "com.example.app", code: 102, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı bulunamadı"])
-                completion(nil, nil)
-                return
-            }
-
-            if let userData = snapshot.value as? [String: Any],
-               let profileURL = userData["profilePicture"] as? String,
-                let username = userData["name"] as? String {
-
-                if self.userType == .child, let ageString = userData["age"] as? String {
-                    guard let age = Int(ageString) else { return }
-                    switch age {
-                    case 7...12:
-                        self.ageRange = .age7to12
-                    case 13...15:
-                        self.ageRange = .age13to15
-                    case 16...18:
-                        self.ageRange = .age16to18
-                    default:
-                        self.ageRange = .age7to12
-                    }
-                    print("Age Range: \(self.ageRange?.rawValue)")
-                } else {
-                    print("Age not found in Firebase")
-                }
-             
-                completion(username, profileURL)
-            } else {
-                // Kullanıcı verileri eksikse veya çekilemediyse hata döndürün.
-                print("Kullanıcı verileri eksik veya çekilemedi")
-                let error = NSError(domain: "com.example.app", code: 101, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı verileri eksik veya çekilemedi"])
-                completion(nil, nil)
-            }
-        }
-    }
+//    func getUserDetails(userID: String, database: String, completion: @escaping (String?, String?) -> Void) {
+//        let databaseRef = Database.database().reference()
+//        let reference = databaseRef.child(database).child(userID)
+//
+//        reference.observeSingleEvent(of: .value) { (snapshot) in
+//            guard snapshot.exists() else {
+//                // Kullanıcı bulunamadıysa hata döndürün.
+//                print("Kullanıcı bulunamadıysa hata döndürün")
+//                let error = NSError(domain: "com.example.app", code: 102, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı bulunamadı"])
+//                completion(nil, nil)
+//                return
+//            }
+//
+//            if let userData = snapshot.value as? [String: Any],
+//               let profileURL = userData["profilePicture"] as? String,
+//                let username = userData["name"] as? String {
+//
+//                if self.userType == .child, let ageString = userData["age"] as? String {
+//                    guard let age = Int(ageString) else { return }
+//                    switch age {
+//                    case 7...12:
+//                        self.ageRange = .age7to12
+//                    case 13...15:
+//                        self.ageRange = .age13to15
+//                    case 16...18:
+//                        self.ageRange = .age16to18
+//                    default:
+//                        self.ageRange = .age7to12
+//                    }
+//                    print("Age Range: \(self.ageRange?.rawValue)")
+//                } else {
+//                    print("Age not found in Firebase")
+//                }
+//             
+//                completion(username, profileURL)
+//            } else {
+//                // Kullanıcı verileri eksikse veya çekilemediyse hata döndürün.
+//                print("Kullanıcı verileri eksik veya çekilemedi")
+//                let error = NSError(domain: "com.example.app", code: 101, userInfo: [NSLocalizedDescriptionKey: "Kullanıcı verileri eksik veya çekilemedi"])
+//                completion(nil, nil)
+//            }
+//        }
+//    }
     
     override func viewDidLayoutSubviews() {
         // let height = descriptionLabel.frame.height + descriptionLabel.frame.origin.y

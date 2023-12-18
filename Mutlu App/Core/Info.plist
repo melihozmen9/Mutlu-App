@@ -4,8 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>futur.ttf</string>
-		<string>Montserrat-Bold.ttf</string>
 		<string>Sono-Bold.ttf</string>
 		<string>Edu-Bold.ttf</string>
 		<string>Mansalva-Regular.ttf</string>

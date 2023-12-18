@@ -54,7 +54,7 @@ class EmptyLetterView: UIView {
     }
     private func setupLayout() {
         imageview.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+          make.top.equalToSuperview().offset(100)
             make.leading.equalToSuperview().offset(112)
             make.trailing.equalToSuperview().offset(-112)
             make.height.equalTo(250)
@@ -70,7 +70,6 @@ class EmptyLetterView: UIView {
             make.leading.equalToSuperview().offset(90)
             make.trailing.equalToSuperview().offset(-90)
             make.height.equalTo(50)
-            make.bottom.equalToSuperview()
         }
     }
 

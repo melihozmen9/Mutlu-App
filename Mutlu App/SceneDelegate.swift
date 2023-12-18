@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let value = UserDefaults.standard.bool(forKey: "hasShownGetStarted")
        
-        let navController = UINavigationController(rootViewController: UserDefaults.standard.bool(forKey: "hasShownGetStarted") ? LoginVC() : GetStartedVC())
-//        let navController = UINavigationController(rootViewController: GetStartedVC())
+       let navController = UINavigationController(rootViewController: UserDefaults.standard.bool(forKey: "hasShownGetStarted") ? LoginVC() : GetStartedVC())
+        //let navController = UINavigationController(rootViewController: NotificationVC())
         navController.navigationBar.barTintColor = UIColor.white
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

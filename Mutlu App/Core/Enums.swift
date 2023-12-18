@@ -44,6 +44,7 @@ enum Font {
     case kohoMedium14
     case kohoMedium15
     case kohoMedium16
+  case kohoSemibold11
     case kohoSemibold14
     case kohoSemibold16
     case kohoSemiBold18
@@ -69,6 +70,8 @@ enum Font {
             return UIFont(name: "Koho-Medium", size: 15)!
         case .kohoMedium16:
             return UIFont(name: "Koho-Medium", size: 16)!
+        case .kohoSemibold11:
+            return UIFont(name: "Koho-SemiBold", size: 11)!
         case .kohoSemibold14:
             return UIFont(name: "Koho-SemiBold", size: 14)!
         case .kohoSemibold16:

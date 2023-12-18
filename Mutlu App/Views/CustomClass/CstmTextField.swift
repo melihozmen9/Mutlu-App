@@ -49,9 +49,9 @@ class CstmTextField: UIView {
     }
     private func setupLayout() {
         textField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(22)
+            make.top.equalToSuperview().offset(15)
             make.leading.equalToSuperview().offset(17)
-            make.bottom.equalToSuperview().offset(-17)
+            make.bottom.equalToSuperview().offset(-10)
             make.trailing.equalTo(imageview.snp.leading)
         }
         imageview.snp.makeConstraints { make in

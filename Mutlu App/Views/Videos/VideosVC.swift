@@ -166,20 +166,35 @@ class VideosVC: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
-        view.addSubViews(tableView,dropdownView)
+      if userType == .volunteer {
+        view.addSubViews(tableView)
+            
+      } else {
+        view.addSubViews(dropdownView)
+        view.addSubViews(tableView)
+      }
+       
         setupLayout()
     }
     private func setupLayout() {
+      if userType == .volunteer {
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.bottom.leading.trailing.equalToSuperview()
+        }
+      } else {
         dropdownView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(350)
             make.height.equalTo(50)
         }
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(dropdownView.snp.bottom).offset(20)
-            make.bottom.leading.trailing.equalToSuperview()
-        }
+          tableView.snp.makeConstraints { make in
+              make.top.equalTo(dropdownView.snp.bottom).offset(20)
+              make.bottom.leading.trailing.equalToSuperview()
+          }
+      }
+   
     }
     
     @objc func dropdownViewTapped() {

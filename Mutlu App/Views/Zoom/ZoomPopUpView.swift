@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import Firebase
 import FirebaseDatabase
+import FirebaseMessaging
+
 
 class ZoomPopUpVC: UIViewController {
     
@@ -75,18 +77,14 @@ class ZoomPopUpVC: UIViewController {
         super.viewDidLoad()
     setupView()
     }
-    
+    //TODO: burada alınan participant verisine ekleme yapılacak
     @objc func yesTapped() {
         guard let userID = userID else { return }
         let databaseRef = Database.database().reference()
-
-        
-        
-        // Path belirle
-        let path = "zoom/activity1/participants"
-
-        // Veriyi belirtilen path'e ekle
-        databaseRef.child(path).setValue(userID) { (error, _) in
+      let path = "zoom/activity1/participants"
+      getFCMToken { token in
+        print("kullanıcının token'ı\(token)")
+        databaseRef.child(path).setValue(token) { (error, _) in
             if let error = error {
                 print("Veri güncellenirken hata oluştu: \(error.localizedDescription)")
             } else {
@@ -94,10 +92,24 @@ class ZoomPopUpVC: UIViewController {
                 self.dismiss(animated: true)
             }
         }
+      }
+     
     }
     @objc func noTapped() {
+     
         dismiss(animated: true)
     }
+  func getFCMToken(completion: @escaping (String?) -> Void) {
+      Messaging.messaging().token(completion: { token, error in
+          if let error = error {
+              print("FCM token alınamadı: \(error.localizedDescription)")
+              completion(nil)
+          } else if let token = token {
+              print("FCM token başarıyla alındı: \(token)")
+              completion(token)
+          }
+      })
+  }
     
         private func setupView() {
             view.backgroundColor = .clear

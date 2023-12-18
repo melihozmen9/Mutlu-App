@@ -46,6 +46,11 @@ class LettersMainVC: UIViewController {
         cv.layoutIfNeeded()
         return cv
     }()
+  
+  private lazy var emptyLetterView: EmptyLetterView = {
+         let view = EmptyLetterView()
+         return view
+     }()
     
     private lazy var openLetterIv: UIImageView = {
         let iv = UIImageView()
@@ -81,8 +86,8 @@ class LettersMainVC: UIViewController {
     private func setupNavigationBar() {
         // Sağa buton ekleyerek UIButton ve UIImageView oluşturun
         let addButton = UIButton(type: .custom)
-        addButton.setImage(UIImage(named: "info"), for: .normal)
-        addButton.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        addButton.setImage(UIImage(named: "info1x"), for: .normal)
+       
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         
         // UIBarButtonItem oluşturun ve UIButton'ı içine yerleştirin
@@ -105,42 +110,67 @@ class LettersMainVC: UIViewController {
             make.bottom.equalTo(newPenpalBtn.snp.top).offset(-20)
         }
         newPenpalBtn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-82)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(55)
         }
         
     }
+  
+  func showEmptyLetterView() {
+          // Eğer penpalIDs boşsa, boş ekran görünümünü ekranın ortasına bas
+    collectionView.isHidden = true
+          view.addSubview(emptyLetterView)
+          emptyLetterView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(50)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalTo(openLetterIv.snp.top).offset(-20)
+          }
+      }
     
     
-    func fetchPenpal() {
-        guard let userType = userType, let userID = userID else {
-            return
-        }
-        print(userID)
-        print(userType)
-        if userType.rawValue == "child" {
-            
-            self.getPenpalIDs(userID: userID, database: "children") { (penpalIDs, error) in
-                if let error = error {
-                    print("Veri çekme hatası: \(error.localizedDescription)")
-                } else if let penpalIDs = penpalIDs {
-                    print("Penpal IDs: \(penpalIDs)")
-                }
-            }
-        } else {
-            self.getPenpalIDs(userID: userID, database: "volunteers") { (penpalIDs, error) in
-                if let error = error {
-                    print("Veri çekme hatası: \(error.localizedDescription)")
-                } else if let penpalIDs = penpalIDs {
-                    print("Penpal IDs: \(penpalIDs)")
-                }
-            }
-            
-        }
-    }
-    
+  func fetchPenpal() {
+      guard let userType = userType, let userID = userID else {
+          return
+      }
+
+      if userType.rawValue == "child" {
+          self.getPenpalIDs(userID: userID, database: "children") { (penpalIDs, error) in
+              if let error = error {
+                  print("Veri çekme hatası: \(error.localizedDescription)")
+                self.showEmptyLetterView()
+              } else if let penpalIDs = penpalIDs {
+                  if penpalIDs.isEmpty {
+                      // Eğer penpalIDs boşsa, boş ekranı göster
+                      self.showEmptyLetterView()
+                  } else {
+                      print("Penpal IDs: \(penpalIDs)")
+                      // PenpalIDs boş değilse, detayları çek
+                      self.getDetails(forPenpalIDs: penpalIDs)
+                  }
+              }
+          }
+      } else {
+          self.getPenpalIDs(userID: userID, database: "volunteers") { (penpalIDs, error) in
+              if let error = error {
+                  print("Veri çekme hatası: \(error.localizedDescription)")
+                self.showEmptyLetterView()
+              } else if let penpalIDs = penpalIDs {
+                  if penpalIDs.isEmpty {
+                      // Eğer penpalIDs boşsa, boş ekranı göster
+                      self.showEmptyLetterView()
+                  } else {
+                      print("Penpal IDs: \(penpalIDs)")
+                      // PenpalIDs boş değilse, detayları çek
+                      self.getDetails(forPenpalIDs: penpalIDs)
+                  }
+              }
+          }
+      }
+  }
+
  
     func getPenpalIDs(userID: String, database: String, completion: @escaping ([String]?, Error?) -> Void) {
         let reference = databaseRef.child(database).child(userID)
@@ -238,6 +268,7 @@ class LettersMainVC: UIViewController {
         let databaseRef = Database.database().reference()
         
         guard let userID = userID else { return}
+      
         
         if userType?.rawValue == "child" {
             self.updateCountForCollection("children", userID: userID)
@@ -255,10 +286,13 @@ class LettersMainVC: UIViewController {
                                   print("New Person Name: \(newPersonName)")
                             self.newPersonName = newPersonName
                             self.updateCountForCollection("volunteers", userID: volunteerID)
+                          
                             let penpalsData: [String: Any] = [
                                 "childUserID": userID,
                                 "volunteerUserID": volunteerID,
-                                "lastDate": ""
+                                "lastDate": "",
+                                "childDeviceID": "empty",
+                                "volunteerDeviceID": "empty"
                             ]
                             let newPenpalsRef = databaseRef.child("penpals").childByAutoId()
                             newPenpalsRef.setValue(penpalsData) { (error, ref) in
