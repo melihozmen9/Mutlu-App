@@ -78,23 +78,66 @@ class ZoomPopUpVC: UIViewController {
     setupView()
     }
     //TODO: burada alınan participant verisine ekleme yapılacak
-    @objc func yesTapped() {
-        guard let userID = userID else { return }
-        let databaseRef = Database.database().reference()
+  @objc func yesTapped() {
+      guard let userID = userID else { return }
+      let databaseRef = Database.database().reference()
       let path = "zoom/activity1/participants"
+
       getFCMToken { token in
-        print("kullanıcının token'ı\(token)")
-        databaseRef.child(path).setValue(token) { (error, _) in
-            if let error = error {
-                print("Veri güncellenirken hata oluştu: \(error.localizedDescription)")
-            } else {
-                print("Veri başarıyla güncellendi.")
-                self.dismiss(animated: true)
-            }
-        }
+          print("Kullanıcının token'ı: \(token)")
+
+          // Yeni değeri doğrudan ilgili path ve token üzerine ekleyin
+          databaseRef.child(path).child(token!).setValue(true) { (error, _) in
+              if let error = error {
+                  print("Veri eklenirken hata oluştu: \(error.localizedDescription)")
+              } else {
+                  print("Veri başarıyla eklendi.")
+                  self.dismiss(animated: true)
+              }
+          }
       }
-     
-    }
+  }
+
+//  @objc func yesTapped() {
+//      guard let userID = userID else { return }
+//      let databaseRef = Database.database().reference()
+//      let path = "zoom/activity2"
+//
+//      getFCMToken { token in
+//          print("Kullanıcının token'ı: \(token)")
+//
+//          // İlgili path'teki veriyi al
+//          databaseRef.child(path).observeSingleEvent(of: .value) { (snapshot) in
+//              if snapshot.exists() {
+//                  if var activityData = snapshot.value as? [String: Any] {
+//                      // İlgili path'teki participants array'ini al
+//                      var participants: [String] = activityData["participants"] as? [String] ?? []
+//
+//                      // Yeni değeri participants array'ine ekle
+//                    participants.append(token!)
+//
+//                      // participants array'ini güncelle
+//                      activityData["participants"] = participants
+//
+//                      // Güncellenmiş veriyi kaydet
+//                      databaseRef.child(path).setValue(activityData) { (error, _) in
+//                          if let error = error {
+//                              print("Veri güncellenirken hata oluştu: \(error.localizedDescription)")
+//                          } else {
+//                              print("Veri başarıyla güncellendi.")
+//                              self.dismiss(animated: true)
+//                          }
+//                      }
+//                  } else {
+//                      print("Veri alınamadı veya uygun formatta değil.")
+//                  }
+//              } else {
+//                  print("Path bulunamadı.")
+//              }
+//          }
+//      }
+//  }
+
     @objc func noTapped() {
      
         dismiss(animated: true)
@@ -103,7 +146,7 @@ class ZoomPopUpVC: UIViewController {
       Messaging.messaging().token(completion: { token, error in
           if let error = error {
               print("FCM token alınamadı: \(error.localizedDescription)")
-              completion(nil)
+              completion("simülatorden veri geldi.")
           } else if let token = token {
               print("FCM token başarıyla alındı: \(token)")
               completion(token)
