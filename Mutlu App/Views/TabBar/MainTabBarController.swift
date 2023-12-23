@@ -129,8 +129,8 @@ class MainTabBarController: UITabBarController {
              let profileURL = userData["profilePicture"] as? String,
               let username = userData["name"] as? String {
 
-              if self.userType == .child, let ageString = userData["age"] as? String {
-                  guard let age = Int(ageString) else { return }
+              if self.userType == .child, let age = userData["age"] as? Int {
+//                  guard let age = ageString else { return }
                   switch age {
                   case 7...12:
                       self.ageRange = .age7to12

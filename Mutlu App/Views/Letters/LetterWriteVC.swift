@@ -142,12 +142,7 @@ class LetterWriteVC: UIViewController, UITextViewDelegate {
             formatter.dateFormat = "dd MMMM yyyy, EEEE"
             let dateString = formatter.string(from: Date())
             print(dateString)
-            let lettersData: [String: Any] = [
-                   "text": text,
-                   "date": dateString,
-                   "sender": userType?.rawValue,
-                   "isFiltered" : false
-               ]
+         
             let dateData: [String:String] = [
                 "lastDate": dateString
             ]
@@ -175,6 +170,13 @@ class LetterWriteVC: UIViewController, UITextViewDelegate {
                               newPenpalsRef.updateChildValues(volunteerDeviceData)
                       }
             let newLetterRef = newPenpalsRef.child("letters").childByAutoId() // selectedPenpalsID, güncellenmek istenen penpals verisinin ID'si olmalı
+            let lettersData: [String: Any] = [
+                   "text": text,
+                   "date": dateString,
+                   "sender": self.userType?.rawValue,
+                   "filtered" : false,
+                   "letterId": newLetterRef.key
+               ]
             newLetterRef.setValue(lettersData) { (error, ref) in
                 if let error = error {
                     print("Error adding letter data: \(error.localizedDescription)")

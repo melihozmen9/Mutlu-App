@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import Kingfisher
+import FirebaseMessaging
 
 protocol PhotoChanger: AnyObject {
     func changePhoto(imageURL:URL)
@@ -211,121 +212,139 @@ class SignUpVC: UIViewController, PhotoChanger {
         }
       
     }
+  func getFCMToken(completion: @escaping (String?) -> Void) {
+      Messaging.messaging().token(completion: { token, error in
+          if let error = error {
+              print("FCM token alınamadı: \(error.localizedDescription)")
+              completion("simülatorden veri geldi.")
+          } else if let token = token {
+              print("FCM token başarıyla alındı: \(token)")
+              completion(token)
+          }
+      })
+  }
     
-    @objc func signUpTapped() {
-        let auth = Auth.auth()
-        
-        switch userType {
-        case .child:
-            guard let name = usernameTf.textField.text, let age = ageTf.textField.text, let password1 = passwordTf.textField.text, let password2 = confirmPasswordTf.textField.text else { return }
-            if password1 == password2 {
-            if isAgeInRange(age) {
-                if password1 == password2 {
-                    auth.createUser(withEmail: (name + "@gmail.com"), password: password1) { (authResult, error) in
-                        if let error = error {
-                            self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
-                        } else if let user = authResult?.user {
-                            let userID = user.uid  // Kullanıcının UID'si
-                            
-                            let databaseRef = Database.database().reference()
-                            
-                            // Volunteers verilerini ekleyin
-                            let childrenData: [String: Any] = [
-                                "name": name,
-                                "age": age,
-                                "profilePicture": self.profilePicture,
-                                "count": 0,
-                                "type" : "child"
-                            ]
-                            
-                            databaseRef.child("children").child(userID).setValue(childrenData) { (error, ref) in
-                                if let error = error {
-                                    print("Error writing volunteers data to Realtime Database: \(error)")
-                                } else {
-                                    let vc = MainPageVC()
-                                    vc.userType = .child
-                                    vc.userID = userID
-                                    self.navigationController?.pushViewController(vc, animated: true)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            }
-        case .volunteer:
-            guard let name = usernameTf.textField.text,  let email = emailTf.textField.text, let password1 = passwordTf.textField.text, let password2 = confirmPasswordTf.textField.text else { return }
-            if password1 == password2 {
-            auth.createUser(withEmail: email, password: password1) { (authResult, error) in
-                if let error = error {
-                    self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
-                } else if let user = authResult?.user {
-                    let userID = user.uid
-                    
-                    let databaseRef = Database.database().reference()
-                    let vc = MainPageVC()
-                    vc.userType = self.userType
-                    
-                    
-                    let userData: [String: Any] = [
-                        "name": name,
-                        "profilPicture": self.profilePicture,
-                        "email": email,
-                        "type" : self.userType.rawValue
-                    ]
-                    databaseRef.child(DataCategory.volunteers.rawValue).child(userID).setValue(userData) { (error, ref) in
-                        if let error = error {
-                            print("Error writing volunteers data to Realtime Database: \(error)")
-                        } else {
-                        
-                            vc.userType = self.userType
-                            vc.userID = userID
-                            self.navigationController?.pushViewController(vc, animated: true)
-                        }
-                    }
-                }
-            }
-            }
-        case .parent:
-            guard let name = usernameTf.textField.text,  let email = emailTf.textField.text, let password1 = passwordTf.textField.text, let password2 = confirmPasswordTf.textField.text else { return }
-            if password1 == password2 {
-            auth.createUser(withEmail: email, password: password1) { (authResult, error) in
-                if let error = error {
-                    self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
-                } else if let user = authResult?.user {
-                    let userID = user.uid
-                    
-                    let databaseRef = Database.database().reference()
-                    let vc = MainPageVC()
-                    vc.userType = self.userType
-                    
-                    
-                    let userData: [String: Any] = [
-                        "name": name,
-                        "profil": self.profilePicture,
-                        "email": email,
-                        "userID": userID,
-                        "count": 0,
-                        "type" : self.userType.rawValue
-                    ]
-                    databaseRef.child(DataCategory.parents.rawValue).child(userID).setValue(userData) { (error, ref) in
-                        if let error = error {
-                            print("Error writing volunteers data to Realtime Database: \(error)")
-                        } else {
-                        
-                            vc.userType = self.userType
-                            vc.userID = userID
-                            self.navigationController?.pushViewController(vc, animated: true)
-                        }
-                    }
-                }
-            }
-            }
+  @objc func signUpTapped() {
+    let auth = Auth.auth()
+    getFCMToken { token in
       
       
+      switch self.userType {
+      case .child:
+        guard let name = self.usernameTf.textField.text, let age = self.ageTf.textField.text, let password1 = self.passwordTf.textField.text, let password2 = self.confirmPasswordTf.textField.text else { return }
+        if password1 == password2 {
+          if self.isAgeInRange(age) {
+            if password1 == password2 {
+              auth.createUser(withEmail: (name + "@mail.com"), password: password1) { (authResult, error) in
+                if let error = error {
+                  self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+                } else if let user = authResult?.user {
+                  let userID = user.uid  // Kullanıcının UID'si
+                  
+                  let databaseRef = Database.database().reference()
+                  
+                  // Volunteers verilerini ekleyin
+                  let childrenData: [String: Any] = [
+                    "name": name,
+                    "age": Int(age),
+                    "profilePicture": self.profilePicture,
+                    "count": 0,
+                    "type" : "child",
+                    "deviceID": token,
+                    "id": userID
+                  ]
+                  
+                  databaseRef.child("children").child(userID).setValue(childrenData) { (error, ref) in
+                    if let error = error {
+                      print("Error writing volunteers data to Realtime Database: \(error)")
+                    } else {
+                      let vc = MainPageVC()
+                      vc.userType = .child
+                      vc.userID = userID
+                      self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+      case .volunteer:
+        guard let name = self.usernameTf.textField.text,  let email = self.emailTf.textField.text, let password1 = self.passwordTf.textField.text, let password2 = self.confirmPasswordTf.textField.text else { return }
+        if password1 == password2 {
+          auth.createUser(withEmail: email, password: password1) { (authResult, error) in
+            if let error = error {
+              self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else if let user = authResult?.user {
+              let userID = user.uid
+              
+              let databaseRef = Database.database().reference()
+              let vc = MainPageVC()
+              vc.userType = self.userType
+              
+              
+              let userData: [String: Any] = [
+                "name": name,
+                "profilPicture": self.profilePicture,
+                "email": email,
+                "type" : self.userType.rawValue,
+                "deviceID": token,
+                "id": userID
+              ]
+              databaseRef.child(DataCategory.volunteers.rawValue).child(userID).setValue(userData) { (error, ref) in
+                if let error = error {
+                  print("Error writing volunteers data to Realtime Database: \(error)")
+                } else {
+                  
+                  vc.userType = self.userType
+                  vc.userID = userID
+                  self.navigationController?.pushViewController(vc, animated: true)
+                }
+              }
+            }
+          }
+        }
+      case .parent:
+        guard let name = self.usernameTf.textField.text,  let email = self.emailTf.textField.text, let password1 = self.passwordTf.textField.text, let password2 = self.confirmPasswordTf.textField.text else { return }
+        if password1 == password2 {
+          auth.createUser(withEmail: email, password: password1) { (authResult, error) in
+            if let error = error {
+              self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else if let user = authResult?.user {
+              let userID = user.uid
+              
+              let databaseRef = Database.database().reference()
+              let vc = MainPageVC()
+              vc.userType = self.userType
+              
+              
+              let userData: [String: Any] = [
+                "name": name,
+                "profil": self.profilePicture,
+                "email": email,
+                "id": userID,
+                "count": 0,
+                "type" : self.userType.rawValue,
+                "deviceID": token
+              ]
+              databaseRef.child(DataCategory.parents.rawValue).child(userID).setValue(userData) { (error, ref) in
+                if let error = error {
+                  print("Error writing volunteers data to Realtime Database: \(error)")
+                } else {
+                  
+                  vc.userType = self.userType
+                  vc.userID = userID
+                  self.navigationController?.pushViewController(vc, animated: true)
+                }
+              }
+            }
+          }
+        }
+        
+        
+      }
     }
-    
+  }
 
     
     @objc func topImageviewTapped() {

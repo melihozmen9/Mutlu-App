@@ -180,7 +180,7 @@ class LoginVC: UIViewController {
     
     let email: String
        if userType == .child {
-           email = usernameTf.textField.text! + "@gmail.com"
+           email = usernameTf.textField.text! + "@mail.com"
        } else {
            email = usernameTf.textField.text!
        }
